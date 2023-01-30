@@ -30,19 +30,19 @@
     width: auto;
     height: auto;
     text-align: center;
-}
-
-.pembayaran .isi-pembayaran table th {
     padding: 10px;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(192, 194, 231);
     color: #fff;
+    font-family: 'Overpass Mono', monospace;
 }
 
 .pembayaran .isi-pembayaran table td {
     width: auto;
     height: auto;
     text-align: center;
-    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-collapse: collapse;
 }
 
 /* end pembayaran */
@@ -52,6 +52,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Overpass Mono', monospace;
 }
 
 .main .content {
@@ -66,15 +67,16 @@
     top: 180px;
     right: 100px;
     position: absolute;
+    
 }
 
 
 /* search button */
 .main .search input {
-    border: 3px solid rgb(168,209,209);
+    border: 3px solid rgb(102, 165, 165);
     width: 130px;
     height: 30px;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 5px;
 }
 
@@ -92,15 +94,20 @@
 /* end search button */
 
 /* button tambah data */
-.btn-tambah .tambah{
+.btn-tambah .tambah {
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: rgb(102, 165, 165);
+    font-family: 'Overpass Mono', monospace;
     color: #fff;
     width: 105px;
     height: 30px;
     border-radius: 5px;
     position: relative;
+}
+
+.btn-tambah .tambah:hover {
+    background-color: rgb(80, 129, 129);
 }
 /* akhir button tambah data */
 
@@ -109,20 +116,28 @@
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: rgb(102, 165, 165);
+    font-family: 'Overpass Mono', monospace;
     color: #fff;
     width: 50px;
     height: 25px;
     border-radius: 5px;
+}
+.button-aksi .edit:hover {
+    background-color: rgb(80, 129, 129);
 }
 
 .button-aksi .delete {
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: rgb(102, 165, 165);
+    font-family: 'Overpass Mono', monospace;
     color: #fff;
     width: 50px;
     height: 25px;
     border-radius: 5px;
+}
+.button-aksi .delete:hover {
+    background-color: rgb(80, 129, 129);
 }
 
 /* akhir button aksi */

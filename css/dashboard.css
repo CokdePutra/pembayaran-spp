@@ -10,6 +10,7 @@
     width: 600px;
     position: relative;
     border: 5px solid rgb(192, 194, 231);
+    background-color: #fff;
     z-index: -1;
 }
 
@@ -95,15 +96,15 @@
 
 /* search button */
 .main .search input {
-    border: 3px solid rgb(192, 194, 231);
+    border: 3px solid rgb(102, 165, 165);
     width: 130px;
     height: 30px;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 5px;
 }
 
 .main .search button {
-    background-color: rgb(192, 194, 231);
+    background-color: rgb(102, 165, 165);
     color: #fff;
     width: 50px;
     height: 25px;
@@ -111,7 +112,7 @@
 }
 
 .main .search button:hover {
-    background-color: rgb(172, 173, 198);
+    background-color: rgb(80, 129, 129);
 }
 /* end search button */
 

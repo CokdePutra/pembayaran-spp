@@ -45,7 +45,7 @@ if(!isset($_SESSION['username'])){
                     </ul>
                 </div>
                 <div class="logout">
-                    <a href="login/logout.php"><b>KELUAR</b></a>
+                    <a href="../login/logout.php"><b>KELUAR</b></a>
                 </div>            
             </div>
         </nav>
