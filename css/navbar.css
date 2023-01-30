@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* awal hamburger menu (navbar) */
+.nav-profile .hamburger-menu{
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(192, 194, 231);
+    z-index: 999;
+    box-shadow: 1px 2px 5px #888888;
+}
+
+.nav-profile .hamburger-menu img {
+    padding: 5px;
+    margin-left: 30px;
+    margin-top: 5px;
+
+}
+
+.nav-profile .profile {
+    top: 8px;
+    right: 20px;
+    position: fixed;
+}
+/* akhir hamburger menu (navbar) */
+
+/* awal sidebar */
+.logo img {
+    height: 135px;
+    width: 135px;
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 35px;
+    margin-top: 80px;
+}
+
+.navbar .sidebar {
+    height: 100%;
+    width: 210px;
+    left: 0;
+    background-color: rgb(192, 194, 231);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: 0.3s;
+    /* z-index: 9999; */
+}
+
+.navbar .sidebar.active {
+    left: -100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+li {
+    margin-top: 20px;
+    margin-left: 35px;
+}
+
+li a {
+    text-decoration: none;
+    color: rgb(68, 56, 56);
+}
+
+li :hover {
+    color: rgb(255, 255, 255);
+}
+
+.logout a {
+    color: #000;
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+}
+
+.logout :hover {
+    color: rgb(255, 255, 255);
+}
+/* akhir sidebar */
+
+
+
+
+/* .tabel .content.active {
+    margin-left:220px;
+} */
+
+
+
+
+
+
+/* laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 85%;
+    }
+    .logo img {
+        height: 105px;
+        width: 105px;
+        margin-bottom: 10px;
+        position: relative;
+        margin-left: 35px;
+        margin-top: 80px;
+    }
+    .navbar .sidebar {
+        height: 100%;
+        width: 180px;
+        left: 0;
+    }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 75%;
+    }
+    .logo img {
+        height: 85px;
+        width: 85px;
+        margin-bottom: 10px;
+        position: relative;
+        margin-left: 35px;
+        margin-top: 80px;
+    }
+    .navbar .sidebar {
+        height: 100%;
+        width: 160px;
+        left: 0;
+    }
+}
