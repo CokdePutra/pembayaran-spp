@@ -10,7 +10,7 @@
     width: 600px;
     position: relative;
     border: 5px solid rgb(192, 194, 231);
-    background-color: #fff;
+    background-color: rgb(244, 244, 244);
     z-index: -1;
 }
 
@@ -93,10 +93,16 @@
     position: absolute;
 }
 
+.content h2 {
+    color: rgb(68, 56, 56);
+}
+
+
 
 /* search button */
 .main .search input {
     border: 3px solid rgb(102, 165, 165);
+    background-color: rgb(244, 244, 244);
     width: 130px;
     height: 30px;
     border-radius: 5px;

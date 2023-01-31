@@ -11,6 +11,7 @@
     width: 1200px;
     position: relative;
     border: 5px solid rgb(192, 194, 231);
+    box-shadow: 2px 2px 6px #888888;
     z-index: -1;
 }
 
@@ -32,15 +33,15 @@
     text-align: center;
     padding: 10px;
     background-color: rgb(192, 194, 231);
-    color: #fff;
+    color: rgb(68, 56, 56);
 }
 
 .pembayaran .isi-pembayaran table td {
     width: auto;
     height: auto;
     text-align: center;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    color: rgb(68, 56, 56);
+    background-color: rgb(244, 244, 244);
     border-collapse: collapse;
 }
 
@@ -66,6 +67,10 @@
     right: 100px;
     position: absolute;
     
+}
+
+.content h2 {
+    color: rgb(68, 56, 56);
 }
 
 

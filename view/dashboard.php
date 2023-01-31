@@ -85,7 +85,7 @@ if(!isset($_SESSION['username'])){
                         </table>
                     </div>
                     <div class="btn-detail">
-                        <form action="tabel/detail_siswa.php?nis=<?= $row ['nis'];?>" method="POST">
+                        <form action="detail_siswa.php?nis=<?= $row ['nis'];?>" method="POST">
                             <input type="submit" value="Detail">
                         </form>
                     </div>
