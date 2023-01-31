@@ -11,7 +11,7 @@
                 <!-- isi sidebar -->
                 <div class="isi">
                     <ul>
-                        <li><a href="../view/dashboard.php"><b>Halaman Utama</b></a></li>
+                        <li class="active"><a href="../view/dashboard.php"><img src="../image/home.png" style="width:15px; height:15px; margin-right:5px;"><b>Halaman Utama</b></a></li>
                         <li><a href=""><b>Tabel Siswa</b></a></li>
                         <li><a href=""><b>Tabel Petugas</b></a></li>
                         <li><a href=""><b>Tabel SPP</b></a></li>
@@ -21,7 +21,7 @@
                     </ul>
                 </div>
                 <div class="logout">
-                    <a href="../login/logout.php"><b>KELUAR</b></a>
+                    <a href="../login/logout.php"><img src="../image/logout.png" style="width:15px; height:15px; margin-right:5px;"><b>KELUAR</b></a>
                 </div>            
             </div>
         </nav>

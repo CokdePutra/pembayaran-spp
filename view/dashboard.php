@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 if(!isset($_SESSION['username'])){
-    echo "<script>alert('kamuu jangan coba coba');window,location='login/login.php';</script>";
+    echo "<script>alert('kamuu jangan coba coba');window,location='../login/login.php';</script>";
 }
 
 

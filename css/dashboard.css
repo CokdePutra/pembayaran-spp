@@ -1,3 +1,12 @@
+/* side when active */
+.active {
+    padding: 8px;
+    margin-right: -5px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+/* tutup side when active */
+
 /* biodata */
 .main .border {
     display: flex;
