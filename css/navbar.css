@@ -1,3 +1,5 @@
+@import url('root.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +7,7 @@
     outline: none;
     border: none;
     text-decoration: none;
+    font-family: 'Figtree';
 }
 
 body {
@@ -50,7 +53,6 @@ body {
     width: 210px;
     left: 0;
     background-color: rgb(192, 194, 231);
-    font-family: 'Overpass Mono', monospace;
     overflow-y: auto;
     display: flex;
     flex-direction: column;

@@ -118,7 +118,6 @@
     color: #fff;
     background-color: rgb(192, 194, 231);
     color: #fff;
-    font-family: 'Overpass Mono', monospace;
 }
 
 /* end tagihan siswa */
@@ -128,7 +127,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Overpass Mono', monospace;
 }
 
 .main .content {

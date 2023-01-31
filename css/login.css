@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Figtree';
 }
 
 body {
@@ -24,7 +25,6 @@ body {
 
 .welcome {
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -68,7 +68,6 @@ body {
     color: #000;
     border-radius: 5px;
     background-color: rgb(141,203,230);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .btn:hover {
