@@ -73,7 +73,7 @@ if(!isset($_SESSION['username'])){
                                     <th>Nominal</th>
                                     <th>                
                                         <div class="btn-tambah">
-                                            <a href=""><button class="tambah">Tambah Data</button></a>
+                                            <a class="tambah" href="form_bayar.php">Tambah Data</a>
                                         </div>
                                     </th>
                                 </tr>
