@@ -1,10 +1,5 @@
 /* side when active */
-.active {
-    padding: 8px;
-    margin-right: -5px;
-    background-color: #fff;
-    border-radius: 10px;
-}
+
 /* tutup side when active */
 
 /* biodata */
@@ -20,6 +15,7 @@
     position: relative;
     border: 5px solid rgb(192, 194, 231);
     background-color: rgb(244, 244, 244);
+    box-shadow: 1px 2px 5px #888888;
     z-index: -1;
 }
 

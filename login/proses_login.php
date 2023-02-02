@@ -6,13 +6,13 @@ $username = $_POST['username'];
 $nis = $_POST['username'];
 $password = $_POST['password'];
 
-$query_petugas = "SELECT * FROM tb_petugas WHERE username='$username' AND password = '$password'";
-$hasil_petugas = mysqli_query($koneksi,$query_petugas);
+
+$hasil_petugas = mysqli_query($koneksi,"SELECT * FROM tb_petugas WHERE username='$username' AND password = '$password'");
 $cek_petugas = mysqli_num_rows($hasil_petugas);
 $baris_petugas = mysqli_fetch_assoc($hasil_petugas);
 
-$query_siswa = "SELECT * FROM tb_siswa WHERE nis='$nis' AND password = '$password'";
-$hasil_siswa = mysqli_query($koneksi,$query_siswa);
+
+$hasil_siswa = mysqli_query($koneksi,"SELECT * FROM tb_siswa WHERE nis='$nis' AND password = '$password'");
 $cek_siswa = mysqli_num_rows($hasil_siswa);
 $baris_siswa = mysqli_fetch_assoc($hasil_siswa);
 
