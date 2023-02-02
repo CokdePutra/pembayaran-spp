@@ -1,6 +1,8 @@
-/* side when active */
-
-/* tutup side when active */
+:root {
+    --primary:rgb(192, 194, 231);
+    --text-color: rgb(68, 56, 56);
+    --bg: rgb(244, 244, 244);
+  }
 
 /* biodata */
 .main .border {
@@ -13,8 +15,8 @@
     height: 400px;
     width: 600px;
     position: relative;
-    border: 5px solid rgb(192, 194, 231);
-    background-color: rgb(244, 244, 244);
+    border: 5px solid var(--primary);
+    background-color: var(--bg);
     box-shadow: 1px 2px 5px #888888;
     z-index: -1;
 }
@@ -22,7 +24,7 @@
 .main .judul {
     position: absolute;
     text-align: center;
-    background-color: rgb(192, 194, 231);
+    background-color: var(--primary);
     height: 50px;
     width: 100%;
     left: 0px;
@@ -32,7 +34,7 @@
 .main .judul h3 {
     margin-top: 10px;
     margin-left: 10px;
-    color: rgb(68, 56, 56);
+    color: var(--text-color);
 }
 
 .main .isi {
@@ -100,7 +102,7 @@
 }
 
 .content h2 {
-    color: rgb(68, 56, 56);
+    color: var(--text-color);
 }
 
 
@@ -108,7 +110,7 @@
 /* search button */
 .main .search input {
     border: 3px solid rgb(102, 165, 165);
-    background-color: rgb(244, 244, 244);
+    background-color: var(--bg);
     width: 130px;
     height: 30px;
     border-radius: 5px;

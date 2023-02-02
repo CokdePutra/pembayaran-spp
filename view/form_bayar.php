@@ -58,29 +58,29 @@ if(!isset($_SESSION['username'])){
             <div class="biodata">
                 <div class="border">
                     <div class="judul">
-                        <h3>Biodata Siswa</h3>
+                        <h3>Masukan Data</h3>
                     </div>
                     <div class="isi">
                             <?php
                                 $hasil = mysqli_query($koneksi, $query);
-                                while($row = mysqli_fetch_assoc($hasil)){
+                                $row = mysqli_fetch_assoc($hasil)
                             ?>
                         <table>
                             <tr>
                                 <th>NIS</th>
-                                <td><?= $row ['nis'];?></td>
+                                <td><input type="text" value="<?= $row['nis'] ?>"></td>
                             </tr>
                             <tr>
                                 <th>Nama Siswa</th>
-                                <td><?= $row ['nama_siswa'];?></td>
+                                <td><input type="text" value="<?= $row['nis'] ?>"></td>
                             </tr>
                             <tr>
-                                <th>Kelas</th>
-                                <td><?= $row ['nama_kelas'];?></td>
+                                <th>Tanggal Bayar</th>
+                                <td><input type="text" value="<?= $row['nis'] ?>"></td>
                             </tr>
                             <tr>
                                 <th>No Telp Orang Tua</th>
-                                <td><?= $row ['telp_ortu'];?></td>
+                                <td><input type="text" value="<?= $row['nis'] ?>"></td>
                             </tr>
                         </table>
                     </div>
@@ -89,9 +89,6 @@ if(!isset($_SESSION['username'])){
                             <input type="submit" value="Detail">
                         </form>
                     </div>
-                    <?php
-                                }
-                        ?>
                 </div>
             </div>
         </div>

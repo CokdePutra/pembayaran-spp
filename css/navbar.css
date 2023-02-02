@@ -1,5 +1,11 @@
 @import url('root.css');
 
+:root {
+    --primary:rgb(192, 194, 231);
+    --text-color: rgb(68, 56, 56);
+    --bg: rgb(244, 244, 244);
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +31,7 @@ body {
     height: 50px;
     width: 100%;
     position: fixed;
-    background-color: rgb(192, 194, 231);
+    background-color: var(--primary);
     z-index: 999;
     box-shadow: 1px 2px 5px #888888;
 }
@@ -58,7 +64,7 @@ body {
     height: 100%;
     width: 210px;
     left: 0;
-    background-color: rgb(192, 194, 231);
+    background-color: var(--primary);
     overflow-y: auto;
     display: flex;
     flex-direction: column;

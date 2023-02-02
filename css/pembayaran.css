@@ -1,3 +1,9 @@
+:root {
+    --primary:rgb(192, 194, 231);
+    --text-color: rgb(68, 56, 56);
+    --bg:var(--bg)rgb(244, 244, 244);
+  }
+
 /* start pembayaran */
 .pembayaran .border {
     display: flex;
@@ -10,7 +16,7 @@
     height: auto;
     width: 1200px;
     position: relative;
-    border: 5px solid rgb(192, 194, 231);
+    border: 5px solid var(--primary);
     box-shadow: 2px 2px 6px #888888;
     z-index: -1;
 }
@@ -32,16 +38,16 @@
     height: auto;
     text-align: center;
     padding: 10px;
-    background-color: rgb(192, 194, 231);
-    color: rgb(68, 56, 56);
+    background-color: var(--primary);
+    color: var(--text-color);
 }
 
 .pembayaran .isi-pembayaran table td {
     width: auto;
     height: auto;
     text-align: center;
-    color: rgb(68, 56, 56);
-    background-color: rgb(244, 244, 244);
+    color: var(--text-color);
+    background-color: var(--bg);
     border-collapse: collapse;
 }
 

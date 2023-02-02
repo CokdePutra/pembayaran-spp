@@ -16,7 +16,7 @@ if(!isset($_SESSION['username'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- link CSS -->
-    <link rel="stylesheet" href="../css/pembayaran.css">
+    <link rel="stylesheet" href="../css/pembayaran_spp.css">
     <link rel="stylesheet" href="../css/navbar.css">
 </head>
 <body>
@@ -29,22 +29,19 @@ if(!isset($_SESSION['username'])){
         <form action="" method="POST">
         <?php
         include("../koneksi.php");
-        $query = "SELECT * FROM pembayaran_spp INNER JOIN tb_siswa USING(nis) INNER JOIN tb_petugas USING(id_petugas)  ORDER BY id_bayar ASC";
+        $nis = $_SESSION['username'];
+        $query = "SELECT * FROM tb_siswa WHERE nis='$nis' LIMIT 1";
         $keyword = $_POST['keyword'];
         if(isset($_POST["cari"])){
-            $query = "SELECT * FROM pembayaran_spp INNER JOIN tb_siswa USING(nis) INNER JOIN tb_petugas USING(id_petugas)  WHERE id_bayar like '%$keyword%' or
-                                                       nama_petugas like '%$keyword%' or
-                                                       nama_siswa like '%$keyword%' or
-                                                       tanggal_bayar like '%$keyword%' or
-                                                       bulan like '%$keyword%'or
-                                                       status like '%$keyword%'";
+            $query = "SELECT * FROM tb_siswa WHERE nis like '%$keyword%' or
+                                                       nama_siswa like '%$keyword%' LIMIT 1";
         }
         ?>
 
 
         <div class="main">
             <div class="content">
-                <h2>Tabel Pembayaran SPP</h2>
+                <h2>Halo <?= $_SESSION['level_user']; ?> <?= $_SESSION['nama']; ?></h2>
             </div>
             <?php
             if(@$_SESSION['level_user'] == 'admin'){
@@ -58,51 +55,39 @@ if(!isset($_SESSION['username'])){
             ?>
             </form>
             
-            <div class="pembayaran">
+            <div class="biodata">
                 <div class="border">
-                    <div class="isi-pembayaran">
+                    <div class="judul">
+                        <h3>Cari Data Siswa</h3>
+                    </div>
+                    <div class="isi">
+                            <?php
+                                $hasil = mysqli_query($koneksi, $query);
+                                $row = mysqli_fetch_assoc($hasil)
+                            ?>
                         <table>
-                            <thead>
-                                <tr>
-                                    <th>ID Bayar</th>
-                                    <th>Nama Petugas</th>
-                                    <th>Nama Siswa</th>
-                                    <th>Tanggal Bayar</th>
-                                    <th>Bulan</th>
-                                    <th>Status</th>
-                                    <th>Nominal</th>
-                                    <th>                
-                                        <div class="btn-tambah">
-                                            <a class="tambah" href="form_bayar.php">Tambah Data</a>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                    $hasil = mysqli_query($koneksi, $query);
-                                    while($row = mysqli_fetch_assoc($hasil)){
-                                ?>
-                                <tr>
-                                    <td><?= $row ['id_bayar']; ?></td>
-                                    <td><?= $row ['nama_petugas']; ?></td>
-                                    <td><?= $row ['nama_siswa']; ?></td>
-                                    <td><?= $row ['tanggal_bayar']; ?></td>
-                                    <td><?= $row ['bulan']; ?></td>
-                                    <td><?= $row ['status']; ?></td>
-                                    <td><?= $row ['angkatan']; ?></td>
-                                    <td>
-                                        <div class="button-aksi">
-                                                <a href=""><button class="edit">Edit</button></a>
-                                                <a href=""><button class="delete">Delete</button></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <?php
-                                    }
-                                ?>
-                            </tbody>
+                            <tr>
+                                <th>NIS</th>
+                                <td><?= $row ['nis'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Nama Siswa</th>
+                                <td><?= $row ['nama_siswa'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Kelas</th>
+                                <td><?= $row ['nama_kelas'];?></td>
+                            </tr>
+                            <tr>
+                                <th>No Telp Orang Tua</th>
+                                <td><?= $row ['telp_ortu'];?></td>
+                            </tr>
                         </table>
+                    </div>
+                    <div class="btn-detail">
+                        <form action="detail_siswa.php?nis=<?= $row ['nis'];?>" method="POST">
+                            <input type="submit" value="Detail">
+                        </form>
                     </div>
                 </div>
             </div>

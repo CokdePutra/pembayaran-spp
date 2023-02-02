@@ -10,14 +10,14 @@
     justify-content: center;
     align-items: center;
     top: 250px;
-    left: 70px;
+    left: 20px;
     right: 20px;
-    height: 370px;
-    width: 1200px;
+    height: 400px;
+    width: 600px;
     position: relative;
     border: 5px solid var(--primary);
-    background-color: var(--bg);
-    box-shadow: 2px 2px 6px #888888;
+    background-color: rgb(244, 244, 244);
+    box-shadow: 1px 2px 5px #888888;
     z-index: -1;
 }
 
@@ -50,19 +50,17 @@
 
 .main .isi table th {
     text-align: left;
-    color: var(--text-color);
     width: auto;
     height: auto;
 }
 
 .main .isi table td {
-    color: var(--text-color);
     width: auto;
     height: auto;
 }
 
 /* button detail */
-.main .btn-detail button {
+.main .btn-detail input {
     right: 30px;
     bottom: 20px;
     position: absolute;
@@ -73,60 +71,13 @@
     border-radius: 5px;
 }
 
-.main .btn-detail button:hover {
+.main .btn-detail input:hover {
     background-color: rgb(52, 113, 168);
     color: rgb(234, 233, 233);
     width: 49px;
     height: 25px;
 }
 /* end biodata */
-
-/* start tagihan siswa */
-.main .border-tagih {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    top: 250px;
-    left: 70px;
-    right: 20px;
-    height: 760px;
-    width: 1200px;
-    position: relative;
-    border: 5px solid var(--primary);
-    box-shadow: 2px 2px 6px #888888;
-    z-index: -1;
-}
-
-.main .isi-tagih {
-    width: 100%;
-    height: 700px;
-    top: 50px;
-    position: absolute;
-}
-
-.main .isi-tagih table {
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-}
-
-.main .isi-tagih table td {
-    width: 400px;
-    height: auto;
-    text-align: center;
-    color: var(--text-color);
-    background-color: var(--bg);
-    border-collapse: collapse;
-}
-
-.main .isi-tagih table th {
-    padding: 10px;
-    color: var(--text-color);
-    background-color: var(--primary);
-}
-
-/* end tagihan siswa */
 
 /* main content */
 .main {
@@ -150,7 +101,7 @@
 }
 
 .content h2 {
-    color: rgb(68, 56, 56);
+    color: var(--text-color);
 }
 
 
