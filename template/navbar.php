@@ -14,9 +14,9 @@
                 <div class="isi">
                     <ul>
                         <li class="<?php if($active == '') echo "active" ?>"><a href="../view/dashboard.php"><img src="../image/home.png" style="width:15px; height:15px; margin-right:5px;"><b>Halaman Utama</b></a></li>
-                        <li><a href=""><b>Tabel Siswa</b></a></li>
-                        <li><a href=""><b>Tabel Petugas</b></a></li>
-                        <li><a href=""><b>Tabel SPP</b></a></li>
+                        <li class="<?php if($active == 'siswa') echo "active" ?>"><a href=""><b>Tabel Siswa</b></a></li>
+                        <li class="<?php if($active == 'petugas') echo "active" ?>"><a href=""><b>Tabel Petugas</b></a></li>
+                        <li class="<?php if($active == 'spp') echo "active" ?>"><a href=""><b>Tabel SPP</b></a></li>
                         <li class="<?php if($active == 'pembayaran') echo "active" ?>"><a href="../view/pembayaran_spp.php?page=pembayaran"><b>Pembayaran SPP</b></a></li>
                         <li><a href=""><b>History Transaksi</b></a></li>
                         <li><a href=""><b>Laporan</b></a></li>
