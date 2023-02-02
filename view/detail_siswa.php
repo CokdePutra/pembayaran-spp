@@ -30,7 +30,7 @@ if(!isset($_SESSION['username'])){
         <?php
         include("../koneksi.php");
         $nis = $_SESSION['username'];
-        $namas = $_GET['nis'];
+        $namas = $_POST['nis'];
         $query = "SELECT * FROM tb_siswa WHERE nis='$namas' LIMIT 1";
         $keyword = $_POST['keyword'];
         if(isset($_POST["cari"])){
@@ -64,7 +64,7 @@ if(!isset($_SESSION['username'])){
                     <div class="isi">
                             <?php
                                 $hasil = mysqli_query($koneksi, $query);
-                                while($row = mysqli_fetch_assoc($hasil)){
+                                $row = mysqli_fetch_assoc($hasil)
                             ?>
                         <table class="tabel-biodata">
                             <tr>
@@ -84,9 +84,6 @@ if(!isset($_SESSION['username'])){
                                 <td><?= $row ['telp_ortu'];?></td>
                             </tr>
                         </table>
-                        <?php
-                                }
-                        ?>
                     </div>
                 </div>
                 <div class="border-tagih">
@@ -96,7 +93,7 @@ if(!isset($_SESSION['username'])){
                     <div class="isi-tagih">
                             <?php
                                 $hasil = mysqli_query($koneksi, $query);
-                                while($row = mysqli_fetch_assoc($hasil)){
+                                $row = mysqli_fetch_assoc($hasil)
                             ?>
                         <table class="tabel-tagih">
                             <thead>
@@ -111,16 +108,18 @@ if(!isset($_SESSION['username'])){
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Juni 2022</td>
+                                    <td>Juni</td>
                                     <td>2022-06-10</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
+                                    <td>
+                                        <a href="../form/form_pembayaran_spp.php?bulan=juni">Bayar</a>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Juli 2022</td>
+                                    <td>Juli</td>
                                     <td>2022-07-10</td>
                                     <td></td>
                                     <td></td>
@@ -129,7 +128,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Agustus 2022</td>
+                                    <td>Agustus</td>
                                     <td>2022-08-10</td>
                                     <td></td>
                                     <td></td>
@@ -138,7 +137,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>September 2022</td>
+                                    <td>September</td>
                                     <td>2022-09-10</td>
                                     <td></td>
                                     <td></td>
@@ -147,7 +146,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>Oktober 2022</td>
+                                    <td>Oktober</td>
                                     <td>2022-10-10</td>
                                     <td></td>
                                     <td></td>
@@ -156,7 +155,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>6</td>
-                                    <td>November 2022</td>
+                                    <td>November</td>
                                     <td>2022-11-10</td>
                                     <td></td>
                                     <td></td>
@@ -165,7 +164,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>7</td>
-                                    <td>Desember 2022</td>
+                                    <td>Desember</td>
                                     <td>2022-12-10</td>
                                     <td></td>
                                     <td></td>
@@ -174,7 +173,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>8</td>
-                                    <td>Januari 2023</td>
+                                    <td>Januari</td>
                                     <td>2023-01-10</td>
                                     <td></td>
                                     <td></td>
@@ -183,7 +182,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>9</td>
-                                    <td>Februari 2023</td>
+                                    <td>Februari</td>
                                     <td>2023-02-10</td>
                                     <td></td>
                                     <td></td>
@@ -192,7 +191,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>10</td>
-                                    <td>Maret 2023</td>
+                                    <td>Maret</td>
                                     <td>2023-03-10</td>
                                     <td></td>
                                     <td></td>
@@ -201,7 +200,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>11</td>
-                                    <td>April 2023</td>
+                                    <td>April</td>
                                     <td>2023-04-10</td>
                                     <td></td>
                                     <td></td>
@@ -210,7 +209,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <td>12</td>
-                                    <td>Mei 2023</td>
+                                    <td>Mei</td>
                                     <td>2023-05-10</td>
                                     <td></td>
                                     <td></td>
@@ -219,9 +218,6 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                             </tbody>
                         </table>
-                        <?php
-                                }
-                        ?>
                     </div>
                 </div>
             </div>

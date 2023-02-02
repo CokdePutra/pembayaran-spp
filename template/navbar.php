@@ -2,7 +2,7 @@
 <?php
             if(@$_SESSION['level_user'] == 'admin'){
 
-                $active=@$_GET['page'];
+                $active = $_GET['page'];
             ?>
         <nav class="navbar">
             <div class="sidebar">

@@ -4,8 +4,8 @@
     --bg: rgb(244, 244, 244);
   }
 
-/* biodata */
-.main .border {
+/* Biodata siswa pada halaman pembayaran spp */
+.main .border-siswa {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +20,7 @@
     box-shadow: 1px 2px 5px #888888;
     z-index: -1;
 }
+/* Tutup biodata siswa pada halaman pembayaran spp */
 
 .main .judul {
     position: absolute;
@@ -87,10 +88,11 @@
 }
 
 .main .content {
-    top: 80px;
-    left: 230px;
+    top: 120px;
+    left: 420px;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
+    color: var(--text-color);
 }
 
 .main .search {

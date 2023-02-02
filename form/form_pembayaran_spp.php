@@ -14,7 +14,7 @@ if(!isset($_SESSION['username'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran SPP</title>
+    <title>Form Pembayaran</title>
     <!-- link CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
@@ -24,41 +24,16 @@ if(!isset($_SESSION['username'])){
 
     <?php
     include('../template/navbar.php');
-    ?>
-        
-        <form action="" method="POST">
-        <?php
-        include("../koneksi.php");
-        $nis = $_SESSION['username'];
-        $query = "SELECT * FROM tb_siswa WHERE nis='$nis' LIMIT 1";
-        $keyword = $_POST['keyword'];
-        if(isset($_POST["cari"])){
-            $query = "SELECT * FROM tb_siswa WHERE nis like '%$keyword%' or
-                                                       nama_siswa like '%$keyword%' LIMIT 1";
-        }
+    include("../koneksi.php");
+    $bulan_bayar = $_GET['bulan'];
+    $query = "SELECT * FROM tb_siswa WHERE nis='$nis'";
         ?>
 
-
         <div class="main">
-            <div class="content">
-                <h2>Halaman Kewajiban Siswa</h2>
-            </div>
-            <?php
-            if(@$_SESSION['level_user'] == 'admin'){
-            ?>
-            <div class="search">
-                <input type="text" name="keyword" placeholder="Cari..." autocomplete="off">
-                <button type="submit" name="cari">Cari</button>
-            </div>
-            <?php
-            }
-            ?>
-            </form>
-            
             <div class="biodata">
-                <div class="border-siswa">
+                <div class="border">
                     <div class="judul">
-                        <h3>Biodata Data Siswa</h3>
+                        <h3>Masukan Pembayaran</h3>
                     </div>
                     <div class="isi">
                             <?php
@@ -75,8 +50,12 @@ if(!isset($_SESSION['username'])){
                                 <td><?= $row ['nama_siswa'];?></td>
                             </tr>
                             <tr>
-                                <th>Kelas</th>
-                                <td><?= $row ['nama_kelas'];?></td>
+                                <th>Tanggal Bayar</th>
+                                <td><?= date('Y-m-d')?></td>
+                            </tr>
+                            <tr>
+                                <th>Bulan Yang Akan di Bayarkan</th>
+                                <td><?= $bulan_bayar?></td>
                             </tr>
                             <tr>
                                 <th>No Telp Orang Tua</th>

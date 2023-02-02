@@ -22,7 +22,7 @@ if($cek_petugas > 0){
     $_SESSION['nama'] = $baris_petugas['nama_petugas'];
     $_SESSION['level_user'] = $baris_petugas['level_user'];
 
-    header("location:../view/dashboard.php");
+    header("location:../view/dashboard.php?page=dashboard");
 }
  elseif ($cek_siswa > 0) {
     $_SESSION['username'] = $nis;
