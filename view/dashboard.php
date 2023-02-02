@@ -17,7 +17,6 @@ if(!isset($_SESSION['username'])){
     <title>Dashboard</title>
     <!-- link CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/pembayaran_spp.css">
     <link rel="stylesheet" href="../css/navbar.css">
 </head>
 <body>
