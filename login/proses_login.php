@@ -20,6 +20,7 @@ if($cek_petugas > 0){
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
     $_SESSION['nama'] = $baris_petugas['nama_petugas'];
+    $_SESSION['id_petugas'] = $baris_petugas['id_petugas'];
     $_SESSION['level_user'] = $baris_petugas['level_user'];
 
     header("location:../view/dashboard.php?page=dashboard");

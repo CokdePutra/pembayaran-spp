@@ -245,6 +245,29 @@
 /* akhir total belum bayar */
 
 
+/* start form pembayaran */
+table input {
+    font-size: 20px;
+    background-color: var(--bg);
+}
+table tr td .btn-bayar input {
+    right: 30px;
+    bottom: 20px;
+    position: absolute;
+    background-color: rgb(57, 132, 198);
+    color: #fff;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+table tr td .btn-bayar input:hover {
+    background-color: rgb(52, 113, 168);
+    color: rgb(234, 233, 233);
+    width: 49px;
+    height: 25px;
+}
+/* end form pembayaran */
 
 
 

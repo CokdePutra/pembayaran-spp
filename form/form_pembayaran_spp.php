@@ -25,7 +25,8 @@ if(!isset($_SESSION['username'])){
     <?php
     include('../template/navbar.php');
     include("../koneksi.php");
-    $bulan_bayar = $_GET['bulan'];
+    $bulan_bayar = $_POST['bulan'];
+    $nis = $_POST['nis'];
     $query = "SELECT * FROM tb_siswa WHERE nis='$nis'";
         ?>
 
@@ -41,33 +42,37 @@ if(!isset($_SESSION['username'])){
                                 $row = mysqli_fetch_assoc($hasil)
                             ?>
                         <table>
-                            <tr>
-                                <th>NIS</th>
-                                <td name="nis"><?= $row ['nis'];?></td>
-                            </tr>
-                            <tr>
-                                <th>Nama Siswa</th>
-                                <td><?= $row ['nama_siswa'];?></td>
-                            </tr>
-                            <tr>
-                                <th>Tanggal Bayar</th>
-                                <td><?= date('Y-m-d')?></td>
-                            </tr>
-                            <tr>
-                                <th>Bulan Yang Akan di Bayarkan</th>
-                                <td><?= $bulan_bayar?></td>
-                            </tr>
-                            <tr>
-                                <th>No Telp Orang Tua</th>
-                                <td><?= $row ['telp_ortu'];?></td>
-                            </tr>
+                            <form action="proses_insert_pembayaran.php" method="POST">
+                                <tr>
+                                    <th>NIS</th>
+                                    <td><input type="text" name="nis" disabled value="<?= $nis?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>Nama Siswa</th>
+                                    <td><input type="text" name="nama_siswa" disabled value="<?= $row ['nama_siswa'];?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>Tanggal Bayar</th>
+                                    <td><input type="date" nama="tgl_bayar" disabled value="<?= date('Y-m-d')?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>Bulan Yang Akan di Bayarkan</th>
+                                    <td><input type="text" name="bulan_bayar" disabled value="<?= $bulan_bayar?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>Angkatan</th>
+                                    <td><input type="text" name="angkatan" disabled value="<?= $row['angkatan']?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>Jumlah Yang di Bayarkan</th>
+                                    <td><input type="text" name="jumlah_bayar" disabled value="700000"></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="btn_bayar"><input type="submit" value="Bayar"></td>
+                                </tr>
+                            </form>
                         </table>
-                    </div>
-                    <div class="btn-detail">
-                        <form action="detail_siswa.php" method="POST">
-                            <input type="submit" value="Detail">
-                            <input type="text" hidden name="nis" value="<?= $row ['nis'];?>">
-                        </form>
                     </div>
                 </div>
             </div>

@@ -48,8 +48,18 @@ if(!isset($_SESSION['username'])){
             if(@$_SESSION['level_user'] == 'admin'){
             ?>
             <div class="search">
-                <input type="text" name="keyword" placeholder="Cari..." autocomplete="off">
+                <input list="list_nis" type="text" name="keyword" placeholder="Cari..." autocomplete="off">
                 <button type="submit" name="cari">Cari</button>
+                <datalist id="list_nis">
+                        <?php
+                        $hasil = mysqli_query($koneksi, "SELECT nis FROM tb_siswa");
+                        while($row = mysqli_fetch_assoc($hasil)){
+                        ?>
+                            <option value="<?php echo $row['nis']; ?>"></option>
+                        <?php
+                        }
+                        ?>
+                </datalist>
             </div>
             <?php
             }
@@ -106,6 +116,7 @@ if(!isset($_SESSION['username'])){
                                 <th>Bayar</th>
                             </thead>
                             <tbody>
+                                <form action="../form/form_pembayaran_spp.php" method="POST">
                                 <tr>
                                     <td>1</td>
                                     <td>Juni</td>
@@ -114,7 +125,10 @@ if(!isset($_SESSION['username'])){
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <a href="../form/form_pembayaran_spp.php?bulan=juni">Bayar</a>
+                                        <input type="submit" value="Bayar">
+                                        <input type="text" hidden name="bulan" value="Juni">
+                                        <input type="text" hidden name="nis" value="<?=$row ['nis']; ?>">
+                                        <!-- <a href="../form/form_pembayaran_spp.php?bulan=juni">Bayar</a> -->
                                     </td>
                                 </tr>
                                 <tr>
@@ -216,6 +230,7 @@ if(!isset($_SESSION['username'])){
                                     <td></td>
                                     <td></td>
                                 </tr>
+                                </form>
                             </tbody>
                         </table>
                     </div>
