@@ -1,0 +1,198 @@
+:root {
+    --primary:rgb(192, 194, 231);
+    --text-color: rgb(68, 56, 56);
+    --bg:var(--bg)rgb(244, 244, 244);
+  }
+
+/* start pembayaran */
+.pembayaran .border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    top: 250px;
+    left: 70px;
+    right: 20px;
+    height: auto;
+    width: 1200px;
+    position: relative;
+    border: 5px solid var(--primary);
+    box-shadow: 2px 2px 6px #888888;
+    z-index: -1;
+}
+
+.pembayaran .isi-pembayaran {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.pembayaran .isi-pembayaran table {
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+}
+
+.pembayaran .isi-pembayaran table th {
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--text-color);
+}
+
+.pembayaran .isi-pembayaran table td {
+    width: auto;
+    height: auto;
+    text-align: center;
+    color: var(--text-color);
+    background-color: var(--bg);
+    border-collapse: collapse;
+}
+
+/* end pembayaran */
+
+/* main content */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .content {
+    top: 80px;
+    left: 230px;
+    position: absolute;
+    z-index: -1;
+}
+
+.main .search {
+    color: white;
+    top: 180px;
+    right: 100px;
+    position: absolute;
+    
+}
+
+.content h2 {
+    color: rgb(68, 56, 56);
+}
+
+
+/* search button */
+.main .search input {
+    border: 3px solid rgb(102, 165, 165);
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.main .search button {
+    background-color: rgb(102, 165, 165);
+    color: #fff;
+    width: 50px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.main .search button:hover {
+    background-color: rgb(80, 129, 129);
+}
+/* end search button */
+
+/* button tambah data */
+.btn-tambah .tambah {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 8px;
+    background-color: rgb(102, 165, 165);
+    font-size: 15px;
+    color: #fff;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    position: relative;
+}
+
+.btn-tambah .tambah:hover {
+    background-color: rgb(80, 129, 129);
+}
+/* akhir button tambah data */
+
+/* button aksi */
+.button-aksi .edit {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 8px;
+    background-color: rgb(219, 214, 92);
+    font-size: 15px;
+    color: #fff;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+.button-aksi .edit:hover {
+    background-color: rgb(160, 157, 68);
+}
+
+.button-aksi .delete {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 8px;
+    background-color: rgb(224, 56, 56);
+    font-size: 15px;
+    color: #fff;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+.button-aksi .delete:hover {
+    background-color: rgb(165, 58, 58);
+}
+
+/* akhir button aksi */
+
+
+
+
+/* responsive */
+/* laptop */
+@media (max-width: 1366px) {
+
+}
+
+/* tablet */
+@media (max-width: 758px) {
+    .main .content {
+        top: 80px;
+        left: 200px;
+        position: absolute;
+        z-index: -1;
+    }
+    .main .border {
+        height: 330px;
+        width: 530px;
+    }
+    .main .search {
+        right: 50px;
+    }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+    .main .content {
+        top: 80px;
+        left: 130px;
+        position: absolute;
+        z-index: -1;
+    }
+    .main .border {
+        height: 330px;
+        width: 430px;
+    }
+    .main .search {
+        right: 10px;
+    }
+}

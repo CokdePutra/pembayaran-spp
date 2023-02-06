@@ -80,6 +80,7 @@ if(!isset($_SESSION['username'])){
                     </div>
                 </div>
             </div>
+            <!-- <img class="image-pendukung" src="../image/sitting.png"> -->
         </div>
 
     </div>

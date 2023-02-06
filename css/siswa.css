@@ -9,10 +9,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: left;
     top: 250px;
     left: 70px;
     right: 20px;
-    height: 370px;
+    height: 22rem;
     width: 75rem;
     position: relative;
     border: 5px solid var(--primary);
@@ -57,7 +58,7 @@
 
 .main .isi table td {
     color: var(--text-color);
-    width: auto;
+    width: 20rem;
     height: auto;
 }
 

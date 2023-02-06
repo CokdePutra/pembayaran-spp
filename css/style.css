@@ -12,8 +12,8 @@
     top: 200px;
     left: 20px;
     right: 20px;
-    height: 500px;
-    width: 700px;
+    height: 31rem;
+    width: 44rem;
     position: relative;
     border: 5px solid var(--primary);
     background-color: var(--bg);
@@ -28,8 +28,8 @@
     top: 250px;
     left: 20px;
     right: 20px;
-    height: 400px;
-    width: 600px;
+    height: 25rem;
+    width: 37rem;
     position: relative;
     border: 5px solid var(--primary);
     background-color: rgb(244, 244, 244);
@@ -280,6 +280,14 @@ table tr td .btn-bayar input:hover {
     background-color: rgb(52, 113, 168);
     color: rgb(234, 233, 233);
 }
+/* .image-pendukung {
+    position: absolute;
+    transform: scaleX(-1);
+    height: 20rem;
+    width: 20rem;
+    right: 7rem;
+    bottom: 3rem;
+} */
 /* end form pembayaran */
 
 
