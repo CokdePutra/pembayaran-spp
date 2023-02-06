@@ -56,7 +56,7 @@ if(!isset($_SESSION['username'])){
                             </div>
                             <div class="belum-bayar">
                                 <h3>Siswa Yang Belum Bayar</h3>
-                                <a href="">60</a>
+                                <a href="pembayaran_spp.php?page=pembayaran">60</a>
                             </div>
                 </div>
             <?php

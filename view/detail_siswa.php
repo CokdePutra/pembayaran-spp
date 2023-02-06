@@ -106,13 +106,15 @@ if(!isset($_SESSION['username'])){
                     <div class="isi-tagih">
                         <table class="tabel-tagih">
                             <thead>
-                                <th>NO</th>
-                                <th>Bulan</th>
-                                <th>Jatuh Tempo</th>
-                                <th>Tanggal Bayar</th>
-                                <th>Jumlah</th>
-                                <th>Keterangan</th>
-                                <th>Bayar</th>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>Bulan</th>
+                                    <th>Jatuh Tempo</th>
+                                    <th>Tanggal Bayar</th>
+                                    <th>Jumlah</th>
+                                    <th>Keterangan</th>
+                                    <th>Bayar</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <?php $nis_global = $row ['nis']; ?>
@@ -150,7 +152,7 @@ if(!isset($_SESSION['username'])){
                                         <tr>
                                             <td><?=$i?></td>
                                             <td><?=$bulan?></td>
-                                            <td>2022-<?=date('m', strtotime("+$i month" , strtotime($awaltempo)));?>-10</td>
+                                            <td class="jatuh-tempo">10-<?=$bulanIndo[date('m', strtotime("+$i month" , strtotime($awaltempo)))];?></td>
                                             <td><?= $row_bulan['tanggal_bayar']?></td>
                                             <td><?= $row_bulan['jumlah_bayar']?></td>
                                             <td><?= $row_bulan['status']?></td>
@@ -159,13 +161,13 @@ if(!isset($_SESSION['username'])){
                                                     $cek_bulan = mysqli_num_rows($hasil_bulan);
                                                     if(!$cek_bulan > 0){
                                                 ?>
-                                                <a class="btn-bayar" href="../form/form_pembayaran_spp.php?bulan=<?=$bulan?>&nis=<?=$row['nis']?>">BAYAR</a>
+                                                <a class="btn-bayar" href="../form/form_pembayaran_spp.php?bulan=<?=$bulan?>&nis=<?=$row['nis']?>&tahun=2022>">BAYAR</a>
                                                 <input type="text" hidden name="bulan" value="<?=$bulan?>">
                                                 <input type="text" hidden name="nis" value="<?=$row ['nis']; ?>">                                        
                                                 <?php
                                                     } else {
                                                         ?>
-                                                        <input class="btn-bayar-disable"  disabled type="submit" value="BAYAR">
+                                                        <input class="btn-bayar-disable"  disabled type="submit" value="TERBAYAR">
                                                         <?php
                                                     }
                                                 ?>

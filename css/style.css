@@ -166,6 +166,7 @@
 }
 /* akhir total siswa */
 
+
 /* awal total petugas */
 .total-petugas {
     width: 43%;
@@ -260,12 +261,24 @@ table tr td .btn-bayar input {
     height: 25px;
     border-radius: 5px;
 }
-
 table tr td .btn-bayar input:hover {
     background-color: rgb(52, 113, 168);
     color: rgb(234, 233, 233);
     width: 49px;
     height: 25px;
+}
+.btn-bayar {
+    background-color: rgb(57, 132, 198);
+    font-size: 15px;
+    width: 4rem;
+    padding: 10px;
+    position: relative;
+    color: #fff;
+    border-radius: 5px;
+}
+.btn-bayar:hover {
+    background-color: rgb(52, 113, 168);
+    color: rgb(234, 233, 233);
 }
 /* end form pembayaran */
 

@@ -73,7 +73,7 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td><input type="submit" name="bayar" value="Bayar"></td>
+                                    <td><input class="btn-bayar" type="submit" name="bayar" value="Bayar"></td>
                                 </tr>
                             </form>
                         </table>
