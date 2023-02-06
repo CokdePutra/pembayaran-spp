@@ -28,7 +28,7 @@ if(!$hasil) {
 else{
     echo "<script>
         alert('SPP Berhasil di Bayarkan');
-        document.location.href='../view/detail_siswa.php?nis=$nis';
+        document.location.href='../view/detail_siswa.php';
         </script>
         ";
 }

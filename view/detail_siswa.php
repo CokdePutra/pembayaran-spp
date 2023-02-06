@@ -161,13 +161,15 @@ if(!isset($_SESSION['username'])){
                                                     $cek_bulan = mysqli_num_rows($hasil_bulan);
                                                     if(!$cek_bulan > 0){
                                                 ?>
-                                                <a class="btn-bayar" href="../form/form_pembayaran_spp.php?bulan=<?=$bulan?>&nis=<?=$row['nis']?>&tahun=2022>">BAYAR</a>
+                                                <a class="btn-bayar" href="../form/form_pembayaran_spp.php?bulan=<?=$bulan?>&nis=<?=$row['nis']?>">BAYAR</a>
                                                 <input type="text" hidden name="bulan" value="<?=$bulan?>">
                                                 <input type="text" hidden name="nis" value="<?=$row ['nis']; ?>">                                        
                                                 <?php
                                                     } else {
                                                         ?>
-                                                        <input class="btn-bayar-disable"  disabled type="submit" value="TERBAYAR">
+                                                        <!-- <input class="btn-bayar-batal" type="submit" value="BATALKAN"> -->
+                                                        <button></button>
+                                                        <a class="btn-bayar-batal" href="../delete/proses_delete_pembayaran.php?id_bayar=<?= $row_bulan['id_bayar']?>" onclick="return confirm('Anda yakin mau membatalkan transaksi ini?')">BATALKAN</a>
                                                         <?php
                                                     }
                                                 ?>
