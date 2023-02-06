@@ -3,8 +3,7 @@ session_start();
 error_reporting(0);
 if(!isset($_SESSION['username'])){
     echo "<script>alert('kamuu jangan coba coba');window,location='../login/login.php';</script>";
-}
-
+} else {
 
 ?>
 
@@ -25,9 +24,13 @@ if(!isset($_SESSION['username'])){
     <?php
     include('../template/navbar.php');
     include("../koneksi.php");
-    $bulan_bayar = $_POST['bulan'];
-    $nis = $_POST['nis'];
+
+    // mengambil data dari detail siswa
+    $bulan_bayar = $_GET['bulan'];
+    $nis = $_GET['nis'];
     $query = "SELECT * FROM tb_siswa WHERE nis='$nis'";
+    $hasil = mysqli_query($koneksi, $query);
+    $row = mysqli_fetch_assoc($hasil);
         ?>
 
         <div class="main">
@@ -38,38 +41,39 @@ if(!isset($_SESSION['username'])){
                     </div>
                     <div class="isi">
                             <?php
-                                $hasil = mysqli_query($koneksi, $query);
-                                $row = mysqli_fetch_assoc($hasil)
+                                // mengambil data nominal
+                                $hasil_angkatan = mysqli_query($koneksi,"SELECT * from tb_siswa INNER JOIN tb_spp USING(angkatan)");
+                                $row_angkatan = mysqli_fetch_assoc($hasil_angkatan);
                             ?>
                         <table>
                             <form action="proses_insert_pembayaran.php" method="POST">
                                 <tr>
                                     <th>NIS</th>
-                                    <td><input type="text" name="nis" disabled value="<?= $nis?>"></td>
+                                    <td><input type="text" name="nis" readonly value="<?= $nis?>"></td>
                                 </tr>
                                 <tr>
                                     <th>Nama Siswa</th>
-                                    <td><input type="text" name="nama_siswa" disabled value="<?= $row ['nama_siswa'];?>"></td>
+                                    <td><input type="text" name="nama_siswa" readonly value="<?= $row ['nama_siswa'];?>"></td>
                                 </tr>
                                 <tr>
                                     <th>Tanggal Bayar</th>
-                                    <td><input type="date" nama="tgl_bayar" disabled value="<?= date('Y-m-d')?>"></td>
+                                    <td><input type="date" nama="tgl_bayar" readonly value="<?= date('Y-m-d')?>"></td>
                                 </tr>
                                 <tr>
                                     <th>Bulan Yang Akan di Bayarkan</th>
-                                    <td><input type="text" name="bulan_bayar" disabled value="<?= $bulan_bayar?>"></td>
+                                    <td><input type="text" name="bulan_bayar" readonly value="<?= $bulan_bayar?>"></td>
                                 </tr>
                                 <tr>
                                     <th>Angkatan</th>
-                                    <td><input type="text" name="angkatan" disabled value="<?= $row['angkatan']?>"></td>
+                                    <td><input type="text" name="angkatan" readonly value="<?= $row_angkatan['angkatan']?>"></td>
                                 </tr>
                                 <tr>
                                     <th>Jumlah Yang di Bayarkan</th>
-                                    <td><input type="text" name="jumlah_bayar" disabled value="700000"></td>
+                                    <td><input type="text" name="jumlah_bayar" readonly value="<?= $row_angkatan['nominal']?>"></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="btn_bayar"><input type="submit" value="Bayar"></td>
+                                    <td><input type="submit" name="bayar" value="Bayar"></td>
                                 </tr>
                             </form>
                         </table>
@@ -85,3 +89,6 @@ if(!isset($_SESSION['username'])){
     <script src="../js/script.js"></script>
 </body>
 </html>
+<?php
+}
+?>

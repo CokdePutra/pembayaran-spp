@@ -62,22 +62,26 @@
 }
 
 /* button detail */
-.main .btn-detail button {
-    right: 30px;
-    bottom: 20px;
-    position: absolute;
+.tabel-tagih .btn-bayar {
     background-color: rgb(57, 132, 198);
+    position: relative;
     color: #fff;
-    width: 50px;
-    height: 25px;
+    width: 70px;
+    height: 35px;
     border-radius: 5px;
 }
-
-.main .btn-detail button:hover {
+.tabel-tagih .btn-bayar:hover {
     background-color: rgb(52, 113, 168);
     color: rgb(234, 233, 233);
-    width: 49px;
-    height: 25px;
+}
+
+.tabel-tagih .btn-bayar-disable {
+    background-color: rgb(149, 149, 149);
+    position: relative;
+    color: rgb(223, 223, 223);
+    width: 70px;
+    height: 35px;
+    border-radius: 5px;
 }
 /* end biodata */
 

@@ -26,20 +26,23 @@ if(!isset($_SESSION['username'])){
     include('../template/navbar.php');
     ?>
         
-        <form action="" method="POST">
+        
         <?php
         include("../koneksi.php");
-        $nis = $_SESSION['username'];
-        $namas = $_POST['nis'];
-        $query = "SELECT * FROM tb_siswa WHERE nis='$namas' LIMIT 1";
-        $keyword = $_POST['keyword'];
-        if(isset($_POST["cari"])){
+        // $nis = $_SESSION['username'];
+        
+        $nis = $_POST['nis'];
+        $_SESSION['nis'] = $nis;
+        $nis_baru = $_SESSION['nis'];
+        $query = "SELECT * FROM tb_siswa WHERE nis='$nis'";
+        $keyword = $_GET['keyword'];
+        if(isset($_GET["keyword"])){
             $query = "SELECT * FROM tb_siswa WHERE nis like '%$keyword%' or
-                                                       nama_siswa like '%$keyword%' LIMIT 1";
+                                                       nama_siswa like '%$keyword%'";
         }
         ?>
 
-
+        <form action="" method="GET">
         <div class="main">
             <div class="content">
                 <h2>Tabel Kewajiban Siswa</h2>
@@ -49,13 +52,13 @@ if(!isset($_SESSION['username'])){
             ?>
             <div class="search">
                 <input list="list_nis" type="text" name="keyword" placeholder="Cari..." autocomplete="off">
-                <button type="submit" name="cari">Cari</button>
+                <button type="submit">Cari</button>
                 <datalist id="list_nis">
                         <?php
                         $hasil = mysqli_query($koneksi, "SELECT nis FROM tb_siswa");
                         while($row = mysqli_fetch_assoc($hasil)){
                         ?>
-                            <option value="<?php echo $row['nis']; ?>"></option>
+                            <option value="<?= $row['nis'];?>"></option>
                         <?php
                         }
                         ?>
@@ -101,10 +104,6 @@ if(!isset($_SESSION['username'])){
                         <h3>Tagihan SPP Siswa</h3>
                     </div>
                     <div class="isi-tagih">
-                            <?php
-                                $hasil = mysqli_query($koneksi, $query);
-                                $row = mysqli_fetch_assoc($hasil)
-                            ?>
                         <table class="tabel-tagih">
                             <thead>
                                 <th>NO</th>
@@ -116,121 +115,76 @@ if(!isset($_SESSION['username'])){
                                 <th>Bayar</th>
                             </thead>
                             <tbody>
-                                <form action="../form/form_pembayaran_spp.php" method="POST">
-                                <tr>
-                                    <td>1</td>
-                                    <td>Juni</td>
-                                    <td>2022-06-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <input type="submit" value="Bayar">
-                                        <input type="text" hidden name="bulan" value="Juni">
-                                        <input type="text" hidden name="nis" value="<?=$row ['nis']; ?>">
-                                        <!-- <a href="../form/form_pembayaran_spp.php?bulan=juni">Bayar</a> -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Juli</td>
-                                    <td>2022-07-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Agustus</td>
-                                    <td>2022-08-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>September</td>
-                                    <td>2022-09-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Oktober</td>
-                                    <td>2022-10-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>November</td>
-                                    <td>2022-11-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Desember</td>
-                                    <td>2022-12-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Januari</td>
-                                    <td>2023-01-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Februari</td>
-                                    <td>2023-02-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Maret</td>
-                                    <td>2023-03-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>11</td>
-                                    <td>April</td>
-                                    <td>2023-04-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>12</td>
-                                    <td>Mei</td>
-                                    <td>2023-05-10</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                <?php $nis_global = $row ['nis']; ?>
+                                <form action="../form/form_pembayaran_spp.php" method="GET">
+
+                                
+                                    <?php
+                                    
+                                    
+
+                                    $awaltempo = date("Y-06-d");
+                                    $bulanIndo =[
+                                            '01' => 'Januari',
+                                            '02' => 'Februari',
+                                            '03' => 'Maret',
+                                            '04' => 'April',
+                                            '05' => 'Mei',
+                                            '06' => 'Juni',
+                                            '07' => 'Juli',
+                                            '08' => 'Agustus',
+                                            '09' => 'September',
+                                            '10' => 'Oktober',
+                                            '11' => 'November',
+                                            '12' => 'Desember',
+                                        ];
+
+
+                                    for ($i=1;$i<13;$i++){
+                                        $jatuhtempo = date("Y-m-d" , strtotime("+$i month" , strtotime($awaltempo)));
+                                        
+                                        $bulan = $bulanIndo[date('m' ,strtotime($jatuhtempo))];
+                                        $hasil_bulan = mysqli_query($koneksi,"SELECT * FROM pembayaran_spp WHERE bulan='$bulan' AND nis='$nis_global'");
+                                        $row_bulan = mysqli_fetch_assoc($hasil_bulan);
+                                        ?>
+                                        <tr>
+                                            <td><?=$i?></td>
+                                            <td><?=$bulan?></td>
+                                            <td>2022-<?=date('m', strtotime("+$i month" , strtotime($awaltempo)));?>-10</td>
+                                            <td><?= $row_bulan['tanggal_bayar']?></td>
+                                            <td><?= $row_bulan['jumlah_bayar']?></td>
+                                            <td><?= $row_bulan['status']?></td>
+                                            <td>
+                                                <?php
+                                                    $cek_bulan = mysqli_num_rows($hasil_bulan);
+                                                    if(!$cek_bulan > 0){
+                                                ?>
+                                                <a class="btn-bayar" href="../form/form_pembayaran_spp.php?bulan=<?=$bulan?>&nis=<?=$row['nis']?>">BAYAR</a>
+                                                <input type="text" hidden name="bulan" value="<?=$bulan?>">
+                                                <input type="text" hidden name="nis" value="<?=$row ['nis']; ?>">                                        
+                                                <?php
+                                                    } else {
+                                                        ?>
+                                                        <input class="btn-bayar-disable"  disabled type="submit" value="BAYAR">
+                                                        <?php
+                                                    }
+                                                ?>
+                                            </td>
+                                        </tr>
+                                    <?php             
+                                    }
+                                    ?>
+                                    
                                 </form>
+                                    
+                                
+
+
+
+                                
+                                
+                                    
+                                
                             </tbody>
                         </table>
                     </div>

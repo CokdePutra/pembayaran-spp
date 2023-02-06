@@ -3,11 +3,12 @@ session_start();
 if(!isset($_SESSION['username'])){
     echo "<script>alert('kamuu jangan coba coba');window,location='../login/login.php';</script>";
 }
+else {
+    
 include('../koneksi.php');
 $id_petugas = $_SESSION['id_petugas'];
 $nis = $_POST['nis'];
-$nama_siswa = $_POST['nama_siswa'];
-$tanggal_bayar = $_POST['tgl_bayar'];
+$tanggal_bayar = date('Y-m-d');
 $bulan = $_POST['bulan_bayar'];
 $status = "Lunas";
 $jumlah_bayar = $_POST['jumlah_bayar'];
@@ -30,6 +31,8 @@ else{
         document.location.href='../view/detail_siswa.php?nis=$nis';
         </script>
         ";
+}
+
 }
 
 

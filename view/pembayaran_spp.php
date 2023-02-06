@@ -97,8 +97,16 @@ if(!isset($_SESSION['username'])){
                     </div>
                     <div class="btn-detail">
                         <form action="detail_siswa.php" method="POST">
+                            <?php
+                            $hasil_detail = mysqli_query($koneksi,$query);
+                            $cek_detail = mysqli_num_rows($hasil_detail);
+                            if($cek_detail > 0){
+                            ?>
                             <input type="submit" value="Detail">
                             <input type="text" hidden name="nis" value="<?= $row ['nis'];?>">
+                            <?php
+                            }
+                            ?>
                         </form>
                     </div>
                 </div>
