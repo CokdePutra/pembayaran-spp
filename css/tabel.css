@@ -68,7 +68,10 @@
 }
 
 .main .search {
+    border: 2px solid black;
+    border-radius: 20px;
     color: white;
+    background-color: #fff;
     top: 180px;
     right: 100px;
     position: absolute;
@@ -82,20 +85,21 @@
 
 /* search button */
 .main .search input {
-    border: 3px solid rgb(102, 165, 165);
+    /* border: 3px solid rgb(102, 165, 165); */
+    padding: 10px;
     width: 130px;
-    height: 30px;
+    height: 10px;
     border-radius: 5px;
-    margin: 5px;
+    margin: 3px;
 }
 
-.main .search button {
+/* .main .search button {
     background-color: rgb(102, 165, 165);
     color: #fff;
     width: 50px;
     height: 25px;
     border-radius: 10px;
-}
+} */
 
 .main .search button:hover {
     background-color: rgb(80, 129, 129);

@@ -247,6 +247,54 @@
 
 
 /* start form pembayaran */
+.border-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 200px;
+    left: 20px;
+    right: 20px;
+    height: 31rem;
+    width: 44rem;
+    position: relative;
+    border: 5px solid var(--primary);
+    background-color: var(--bg);
+    box-shadow: 1px 2px 5px #888888;
+    z-index: 1;
+}
+.border-form .judul{
+    position: absolute;
+    background-color: var(--primary);
+    height: 50px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+.border-form .judul h3 {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: var(--text-color);
+}
+.border-form .isi {
+    width: 80%;
+    height: 65%;
+    position: absolute;
+}
+.border-form .isi table {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+.border-form .isi table th {
+    text-align: left;
+    width: auto;
+    height: auto;
+}
+.border-form .isi table td {
+    width: auto;
+    height: auto;
+}
 table input {
     font-size: 20px;
     background-color: var(--bg);
@@ -269,15 +317,28 @@ table tr td .btn-bayar input:hover {
 }
 .btn-bayar {
     background-color: rgb(57, 132, 198);
+    position: relative;
+    color: #fff;
     font-size: 15px;
     width: 4rem;
     padding: 10px;
-    position: relative;
-    color: #fff;
     border-radius: 5px;
 }
 .btn-bayar:hover {
     background-color: rgb(52, 113, 168);
+    color: rgb(234, 233, 233);
+}
+.btn-batal {
+    background-color: rgb(224, 56, 56);
+    position: relative;
+    color: #fff;
+    font-size: 15px;
+    width: 4rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+.btn-batal:hover {
+    background-color: rgb(183, 49, 49);
     color: rgb(234, 233, 233);
 }
 /* .image-pendukung {

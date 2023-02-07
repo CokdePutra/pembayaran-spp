@@ -35,7 +35,7 @@ if(!isset($_SESSION['username'])){
 
         <div class="main">
             <div class="biodata">
-                <div class="border">
+                <div class="border-form">
                     <div class="judul">
                         <h3>Masukan Pembayaran</h3>
                     </div>
@@ -73,7 +73,10 @@ if(!isset($_SESSION['username'])){
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td><input class="btn-bayar" type="submit" name="bayar" value="Bayar"></td>
+                                    <td>
+                                        <input class="btn-bayar" type="submit" name="bayar" value="Bayar">
+                                        <input class="btn-batal" type="submit" name="bayar" value="Batal">
+                                    </td>
                                 </tr>
                             </form>
                         </table>

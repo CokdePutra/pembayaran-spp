@@ -35,14 +35,14 @@ if(!isset($_SESSION['username'])){
         $_SESSION['nis'] = $nis;
         $nis_baru = $_SESSION['nis'];
         $query = "SELECT * FROM tb_siswa WHERE nis='$nis'";
-        $keyword = $_GET['keyword'];
-        if(isset($_GET["keyword"])){
+        $keyword = $_POST['keyword'];
+        if(isset($_POST["keyword"])){
             $query = "SELECT * FROM tb_siswa WHERE nis like '%$keyword%' or
                                                        nama_siswa like '%$keyword%'";
         }
         ?>
 
-        <form action="" method="GET">
+        <form action="" method="POST">
         <div class="main">
             <div class="content">
                 <h2>Tabel Kewajiban Siswa</h2>
@@ -169,7 +169,7 @@ if(!isset($_SESSION['username'])){
                                                         ?>
                                                         <!-- <input class="btn-bayar-batal" type="submit" value="BATALKAN"> -->
                                                         <button></button>
-                                                        <a class="btn-bayar-batal" href="../delete/proses_delete_pembayaran.php?id_bayar=<?= $row_bulan['id_bayar']?>" onclick="return confirm('Anda yakin mau membatalkan transaksi ini?')">BATALKAN</a>
+                                                        <a class="btn-batal" href="../delete/proses_delete_pembayaran.php?id_bayar=<?= $row_bulan['id_bayar']?>" onclick="return confirm('Anda yakin mau membatalkan transaksi ini?')">BATALKAN</a>
                                                         <?php
                                                     }
                                                 ?>

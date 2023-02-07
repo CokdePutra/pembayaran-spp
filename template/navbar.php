@@ -46,7 +46,7 @@
                         if(@$_SESSION['level_user'] == 'siswa'){
                     ?>
             <div class="out">
-                <a href="../login/logout.php"><img src="../image/logout.png" width="40px" height="40px"></a>
+                <p><a href="../login/logout.php"><img src="../image/logout-logo.png" width="40px" height="40px"></a>KELUAR</p>
             </div>
                     <?php
                         }

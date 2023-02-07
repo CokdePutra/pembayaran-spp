@@ -52,7 +52,7 @@ if(!isset($_SESSION['username'])){
             ?>
             <div class="search">
                 <input type="text" name="keyword" placeholder="Cari..." autocomplete="off">
-                <button type="submit" name="cari">Cari</button>
+                <button type="submit" name="cari"><img src="../image/search-logo.png" style="width:15px; height:15px; margin-right:5px;"></button>
             </div>
             <?php
             }
