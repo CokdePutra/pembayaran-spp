@@ -1,1 +1,1 @@
-kamu jeleks
+kamu jelek
