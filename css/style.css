@@ -1,345 +1,370 @@
 :root {
-    --primary:rgb(192, 194, 231);
-    --text-color: rgb(68, 56, 56);
-    --bg: rgb(244, 244, 244);
-  }
+  --primary: rgb(192, 194, 231);
+  --text-color: rgb(68, 56, 56);
+  --bg: rgb(244, 244, 244);
+}
 
 /* dashboard total siswa dll */
- .border {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 200px;
-    left: 20px;
-    right: 20px;
-    height: 31rem;
-    width: 44rem;
-    position: relative;
-    border: 5px solid var(--primary);
-    background-color: var(--bg);
-    box-shadow: 1px 2px 5px #888888;
-    z-index: 1;
+.border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 200px;
+  left: 20px;
+  right: 20px;
+  height: 31rem;
+  width: 44rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  background-color: var(--bg);
+  box-shadow: 1px 2px 5px #888888;
+  /* z-index: 1; */
 }
 /* Biodata siswa pada halaman pembayaran spp */
 .main .border-siswa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 250px;
-    left: 20px;
-    right: 20px;
-    height: 25rem;
-    width: 37rem;
-    position: relative;
-    border: 5px solid var(--primary);
-    background-color: rgb(244, 244, 244);
-    box-shadow: 1px 2px 5px #888888;
-    z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 17rem;
+  top: 250px;
+  left: 20px;
+  right: 20px;
+  height: 25rem;
+  width: 37rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  background-color: rgb(244, 244, 244);
+  box-shadow: 1px 2px 5px #888888;
+  /* z-index: -1; */
 }
 /* Tutup biodata siswa pada halaman pembayaran spp */
 
 .main .judul {
-    position: absolute;
-    background-color: var(--primary);
-    height: 50px;
-    width: 100%;
-    left: 0px;
-    top: 0px;
+  position: absolute;
+  background-color: var(--primary);
+  height: 50px;
+  width: 100%;
+  left: 0px;
+  top: 0px;
 }
 .main .judul h3 {
-    margin-top: 10px;
-    margin-left: 10px;
-    color: var(--text-color);
+  margin-top: 10px;
+  margin-left: 10px;
+  color: var(--text-color);
 }
 .main .isi {
-    width: 80%;
-    height: 65%;
-    position: absolute;
+  width: 80%;
+  height: 65%;
+  position: absolute;
 }
 
 .main .isi table {
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
 }
 
 .main .isi table th {
-    text-align: left;
-    width: auto;
-    height: auto;
+  text-align: left;
+  width: auto;
+  height: auto;
 }
 
 .main .isi table td {
-    width: auto;
-    height: auto;
+  width: auto;
+  height: auto;
 }
 
 .main .btn-detail input {
-    right: 30px;
-    bottom: 20px;
-    position: absolute;
-    background-color: rgb(57, 132, 198);
-    color: #fff;
-    width: 50px;
-    height: 25px;
-    border-radius: 5px;
+  right: 30px;
+  bottom: 20px;
+  position: absolute;
+  background-color: rgb(57, 132, 198);
+  padding: 8px;
+  color: #fff;
+  /* width: 50px;
+  height: 25px; */
+  border-radius: 5px;
 }
 
 .main .btn-detail input:hover {
-    background-color: rgb(52, 113, 168);
-    color: rgb(234, 233, 233);
-    width: 49px;
-    height: 25px;
+  background-color: rgb(52, 113, 168);
+  color: rgb(234, 233, 233);
+  /* width: 49px;
+  height: 25px; */
 }
 /* end biodata */
 
 /* main content */
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .content {
-    top: 120px;
-    left: 420px;
-    position: absolute;
-    z-index: 1;
-    color: var(--text-color);
+  top: 120px;
+  left: 420px;
+  position: absolute;
+  z-index: 1;
+  color: var(--text-color);
 }
 .main .search {
-    color: white;
-    top: 180px;
-    right: 100px;
-    position: absolute;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  background-color: #fff;
+  top: 180px;
+  right: 100px;
+  position: absolute;
 }
 .content h2 {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 /* Content dalam dashboard */
 
-
 /* search button */
 .main .search input {
-    border: 3px solid rgb(102, 165, 165);
-    background-color: rgb(244, 244, 244);
-    width: 130px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 5px;
+  /* border: 3px solid rgb(102, 165, 165); */
+  color: var(--text-color);
+  padding: 10px;
+  width: 130px;
+  height: 10px;
+  border-radius: 5px;
+  margin: 7px;
 }
-.main .search button {
+.main .search-logo {
+  background-color: #fff;
+  object-fit: contain;
+  margin-right: 5px;
+  padding: 2px;
+}
+/* .main .search button {
     background-color: rgb(102, 165, 165);
     color: #fff;
     width: 50px;
     height: 25px;
     border-radius: 10px;
-}
-.main .search button:hover {
+} */
+/* .main .search button:hover {
     background-color: rgb(80, 129, 129);
-}
+} */
 /* end search button */
-
 
 /* awal total siswa */
 .total-siswa {
-    width: 43%;
-    height: 40%;
-    border: 6px solid var(--primary);
-    color: var(--text-color);
-    position: absolute;
-    left: 30px;
-    top: 30px;
+  width: 43%;
+  height: 40%;
+  border: 6px solid var(--primary);
+  border-radius: 15px;
+  color: var(--text-color);
+  position: absolute;
+  left: 30px;
+  top: 30px;
 }
 .total-siswa h3 {
-    margin: 25px;
+  margin: 25px;
 }
 .total-siswa a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: 600;
-    color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 .total-siswa a:hover {
-    color: #6c6c6c;
+  color: #6c6c6c;
 }
 /* akhir total siswa */
 
-
 /* awal total petugas */
 .total-petugas {
-    width: 43%;
-    height: 40%;
-    border: 6px solid var(--primary);
-    color: var(--text-color);
-    position: absolute;
-    left: 30px;
-    bottom: 30px;
+  width: 43%;
+  height: 40%;
+  border: 6px solid var(--primary);
+  border-radius: 15px;
+  color: var(--text-color);
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
 }
 .total-petugas h3 {
-    margin: 25px;
+  margin: 25px;
 }
 .total-petugas a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: 600;
-    color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 .total-petugas a:hover {
-    color: #6c6c6c;
+  color: #6c6c6c;
 }
 /* akhir total petugas */
 
 /* awal total transaksi */
 .total-transaksi {
-    width: 43%;
-    height: 40%;
-    border: 6px solid var(--primary);
-    color: var(--text-color);
-    position: absolute;
-    right: 30px;
-    top: 30px;
+  width: 43%;
+  height: 40%;
+  border: 6px solid var(--primary);
+  border-radius: 15px;
+  color: var(--text-color);
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 .total-transaksi h3 {
-    margin: 25px;
+  margin: 25px;
 }
 .total-transaksi a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: 600;
-    color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 .total-transaksi a:hover {
-    color: #6c6c6c;
+  color: #6c6c6c;
 }
 /* akhir total transaksi */
 
 /* awal total belum bayar */
 .belum-bayar {
-    width: 43%;
-    height: 40%;
-    border: 6px solid var(--primary);
-    color: var(--text-color);
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
+  width: 43%;
+  height: 40%;
+  border: 6px solid var(--primary);
+  border-radius: 15px;
+  color: var(--text-color);
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
 }
 .belum-bayar h3 {
-    margin: 25px;
+  margin: 25px;
 }
 .belum-bayar a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: 600;
-    color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 .belum-bayar a:hover {
-    color: #6c6c6c;
+  color: #6c6c6c;
 }
 /* akhir total belum bayar */
 
-
 /* start form pembayaran */
 .border-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 200px;
-    left: 20px;
-    right: 20px;
-    height: 31rem;
-    width: 44rem;
-    position: relative;
-    border: 5px solid var(--primary);
-    background-color: var(--bg);
-    box-shadow: 1px 2px 5px #888888;
-    z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 200px;
+  left: 20px;
+  right: 20px;
+  height: 31rem;
+  width: 44rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  background-color: var(--bg);
+  box-shadow: 1px 2px 5px #888888;
+  z-index: 1;
 }
-.border-form .judul{
-    position: absolute;
-    background-color: var(--primary);
-    height: 50px;
-    width: 100%;
-    left: 0px;
-    top: 0px;
+.border-form .judul {
+  position: absolute;
+  background-color: var(--primary);
+  height: 50px;
+  width: 100%;
+  left: 0px;
+  top: 0px;
 }
 .border-form .judul h3 {
-    text-align: center;
-    margin-top: 10px;
-    margin-left: 10px;
-    color: var(--text-color);
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: var(--text-color);
 }
 .border-form .isi {
-    width: 80%;
-    height: 65%;
-    position: absolute;
+  width: 80%;
+  height: 65%;
+  position: absolute;
 }
 .border-form .isi table {
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
 }
 .border-form .isi table th {
-    text-align: left;
-    width: auto;
-    height: auto;
+  text-align: left;
+  width: auto;
+  height: auto;
 }
 .border-form .isi table td {
-    width: auto;
-    height: auto;
+  width: auto;
+  height: auto;
 }
 table input {
-    font-size: 20px;
-    background-color: var(--bg);
+  font-size: 20px;
+  background-color: var(--bg);
 }
 table tr td .btn-bayar input {
-    right: 30px;
-    bottom: 20px;
-    position: absolute;
-    background-color: rgb(57, 132, 198);
-    color: #fff;
-    width: 50px;
-    height: 25px;
-    border-radius: 5px;
+  right: 30px;
+  bottom: 20px;
+  position: absolute;
+  background-color: rgb(57, 132, 198);
+  color: #fff;
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
 }
 table tr td .btn-bayar input:hover {
-    background-color: rgb(52, 113, 168);
-    color: rgb(234, 233, 233);
-    width: 49px;
-    height: 25px;
+  background-color: rgb(52, 113, 168);
+  color: rgb(234, 233, 233);
+  width: 49px;
+  height: 25px;
 }
 .btn-bayar {
-    background-color: rgb(57, 132, 198);
-    position: relative;
-    color: #fff;
-    font-size: 15px;
-    width: 4rem;
-    padding: 10px;
-    border-radius: 5px;
+  background-color: rgb(57, 132, 198);
+  border: 2px solid rgb(57, 132, 198);
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  width: 7rem;
+  height: 45px;
+  padding: 10px;
+  border-radius: 5px;
 }
 .btn-bayar:hover {
-    background-color: rgb(52, 113, 168);
-    color: rgb(234, 233, 233);
+  background-color: rgb(114, 175, 228);
+  color: rgb(255, 255, 255);
 }
 .btn-batal {
-    background-color: rgb(224, 56, 56);
-    position: relative;
-    color: #fff;
-    font-size: 15px;
-    width: 4rem;
-    padding: 10px;
-    border-radius: 5px;
+  background-color: rgb(255, 226, 226);
+  border: 2px solid rgb(226, 103, 103);
+  position: relative;
+  color: rgb(254, 93, 93);
+  font-size: 15px;
+  width: 5rem;
+  height: 45px;
+  border-radius: 5px;
+  padding: 10px;
 }
 .btn-batal:hover {
-    background-color: rgb(183, 49, 49);
-    color: rgb(234, 233, 233);
+  background-color: rgb(226, 103, 103);
+  color: rgb(234, 233, 233);
+  position: relative;
+  font-size: 15px;
+  width: 5rem;
+  height: 45px;
+  border-radius: 5px;
+  padding: 10px;
 }
 /* .image-pendukung {
     position: absolute;
@@ -351,45 +376,41 @@ table tr td .btn-bayar input:hover {
 } */
 /* end form pembayaran */
 
-
-
-
 /* responsive */
 /* laptop */
 @media (max-width: 1366px) {
-
 }
 
 /* tablet */
 @media (max-width: 758px) {
-    .main .content {
-        top: 80px;
-        left: 200px;
-        position: absolute;
-        z-index: -1;
-    }
-    .main .border {
-        height: 330px;
-        width: 530px;
-    }
-    .main .search {
-        right: 50px;
-    }
+  .main .content {
+    top: 80px;
+    left: 200px;
+    position: absolute;
+    z-index: -1;
+  }
+  .main .border {
+    height: 330px;
+    width: 530px;
+  }
+  .main .search {
+    right: 50px;
+  }
 }
 
 /* Mobile Phone */
 @media (max-width: 450px) {
-    .main .content {
-        top: 80px;
-        left: 130px;
-        position: absolute;
-        z-index: -1;
-    }
-    .main .border {
-        height: 330px;
-        width: 430px;
-    }
-    .main .search {
-        right: 10px;
-    }
+  .main .content {
+    top: 80px;
+    left: 130px;
+    position: absolute;
+    z-index: -1;
+  }
+  .main .border {
+    height: 330px;
+    width: 430px;
+  }
+  .main .search {
+    right: 10px;
+  }
 }

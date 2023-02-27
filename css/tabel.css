@@ -1,98 +1,126 @@
 :root {
-    --primary:rgb(192, 194, 231);
-    --text-color: rgb(68, 56, 56);
-    --bg:var(--bg)rgb(244, 244, 244);
-  }
+  --primary: rgb(192, 194, 231);
+  --text-color: rgb(68, 56, 56);
+  --bg: var(--bg) rgb(244, 244, 244);
+}
+
+/* cetak btn */
+.cetak input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  /* margin-right: 3rem; */
+  /* margin-bottom: 17rem; */
+  top: 15rem;
+  left: 4rem;
+  height: 3rem;
+  width: 6rem;
+  position: relative;
+  border: 4px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px #888888;
+  cursor: pointer;
+}
+/* end cetak btn */
 
 /* start pembayaran */
-.pembayaran .border {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    top: 250px;
-    left: 70px;
-    right: 20px;
-    height: auto;
-    width: 1200px;
-    position: relative;
-    border: 5px solid var(--primary);
-    box-shadow: 2px 2px 6px #888888;
-    z-index: -1;
+.box .border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-right: 3rem;
+  margin-bottom: 17rem;
+  top: 15rem;
+  left: 4rem;
+  height: auto;
+  width: 75rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px #888888;
+  /* z-index: -1; */
 }
 
-.pembayaran .isi-pembayaran {
-    width: 100%;
-    height: 100%;
-    position: relative;
+.box .isi-tabel {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.pembayaran .isi-pembayaran table {
-    width: 100%;
-    height: 20px;
-    font-size: 20px;
+.box .isi-tabel table {
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
 }
 
-.pembayaran .isi-pembayaran table th {
-    width: auto;
-    height: auto;
-    text-align: center;
-    padding: 10px;
-    background-color: var(--primary);
-    color: var(--text-color);
+.box .isi-tabel table th {
+  width: auto;
+  height: auto;
+  text-align: center;
+  padding: 25px;
+  background-color: var(--primary);
+  color: var(--text-color);
 }
 
-.pembayaran .isi-pembayaran table td {
-    width: auto;
-    height: auto;
-    text-align: center;
-    color: var(--text-color);
-    background-color: var(--bg);
-    border-collapse: collapse;
+.box .isi-tabel table td {
+  padding: 10px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--bg);
+  border-collapse: collapse;
 }
 
 /* end pembayaran */
 
 /* main content */
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main .content {
-    top: 80px;
-    left: 230px;
-    position: absolute;
-    z-index: -1;
+  top: 120px;
+  left: 420px;
+  position: absolute;
+  z-index: 1;
+  color: var(--text-color);
 }
 
 .main .search {
-    border: 2px solid black;
-    border-radius: 20px;
-    color: white;
-    background-color: #fff;
-    top: 180px;
-    right: 100px;
-    position: absolute;
-    
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  background-color: #fff;
+  top: 180px;
+  right: 100px;
+  position: absolute;
 }
 
 .content h2 {
-    color: rgb(68, 56, 56);
+  color: rgb(68, 56, 56);
 }
-
 
 /* search button */
 .main .search input {
-    /* border: 3px solid rgb(102, 165, 165); */
-    padding: 10px;
-    width: 130px;
-    height: 10px;
-    border-radius: 5px;
-    margin: 3px;
+  /* border: 3px solid rgb(102, 165, 165); */
+  color: var(--text-color);
+  padding: 10px;
+  width: 130px;
+  height: 10px;
+  border-radius: 5px;
+  margin: 7px;
 }
-
+.main .search-logo {
+  background-color: #fff;
+  object-fit: contain;
+  margin-right: 5px;
+  padding: 2px;
+}
 /* .main .search button {
     background-color: rgb(102, 165, 165);
     color: #fff;
@@ -101,102 +129,135 @@
     border-radius: 10px;
 } */
 
-.main .search button:hover {
+/* .main .search button:hover {
     background-color: rgb(80, 129, 129);
-}
+} */
 /* end search button */
 
 /* button tambah data */
 .btn-tambah .tambah {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    padding: 8px;
-    background-color: rgb(102, 165, 165);
-    font-size: 15px;
-    color: #fff;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
-    position: relative;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding: 8px;
+  background-color: rgb(102, 165, 165);
+  font-size: 15px;
+  color: #fff;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  position: relative;
 }
 
 .btn-tambah .tambah:hover {
-    background-color: rgb(80, 129, 129);
+  background-color: rgb(80, 129, 129);
 }
 /* akhir button tambah data */
 
-/* button aksi */
-.button-aksi .edit {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    padding: 8px;
-    background-color: rgb(219, 214, 92);
-    font-size: 15px;
-    color: #fff;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
+/* Form tambah tabel */
+.form-tambah {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.button-aksi .edit:hover {
-    background-color: rgb(160, 157, 68);
+.form-tambah .form-tabel {
+  top: 5rem;
+  height: auto;
+  width: 35rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  background-color: rgb(244, 244, 244);
+  box-shadow: 1px 2px 5px #888888;
+  text-align: center;
+}
+.form-tabel h2 {
+  color: rgb(68, 56, 56);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.form-tabel label {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.form-tabel input[type="text"] {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 8px;
+  width: 20rem;
+}
+.form-tabel input[type="password"] {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 8px;
+  width: 20rem;
+}
+.form-tabel a {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+.form-tabel input[type="submit"] {
+  background-color: rgb(57, 132, 198);
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  width: auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+.form-tabel input[type="submit"] {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 50px;
+  padding: 10px;
+  width: auto;
+}
+.form-tabel select {
+  border: 1px solid black;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  width: auto;
+}
+input[type="submit"]:hover {
+  background-color: rgb(52, 113, 168);
+  color: rgb(234, 233, 233);
 }
 
-.button-aksi .delete {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    padding: 8px;
-    background-color: rgb(224, 56, 56);
-    font-size: 15px;
-    color: #fff;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
-}
-.button-aksi .delete:hover {
-    background-color: rgb(165, 58, 58);
-}
-
-/* akhir button aksi */
-
-
-
+/* Tutup form tambah tabel */
 
 /* responsive */
 /* laptop */
 @media (max-width: 1366px) {
-
 }
 
 /* tablet */
 @media (max-width: 758px) {
-    .main .content {
-        top: 80px;
-        left: 200px;
-        position: absolute;
-        z-index: -1;
-    }
-    .main .border {
-        height: 330px;
-        width: 530px;
-    }
-    .main .search {
-        right: 50px;
-    }
+  .main .content {
+    top: 80px;
+    left: 200px;
+    position: absolute;
+    z-index: -1;
+  }
+  .main .search {
+    right: 50px;
+  }
 }
 
 /* Mobile Phone */
 @media (max-width: 450px) {
-    .main .content {
-        top: 80px;
-        left: 130px;
-        position: absolute;
-        z-index: -1;
-    }
-    .main .border {
-        height: 330px;
-        width: 430px;
-    }
-    .main .search {
-        right: 10px;
-    }
+  .main .content {
+    top: 80px;
+    left: 130px;
+    position: absolute;
+    z-index: -1;
+  }
+  .main .search {
+    right: 10px;
+  }
 }

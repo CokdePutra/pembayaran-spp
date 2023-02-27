@@ -1,230 +1,277 @@
 :root {
-    --primary:rgb(192, 194, 231);
-    --text-color: rgb(68, 56, 56);
-    --bg: rgb(244, 244, 244);
-  }
+  --primary: rgb(192, 194, 231);
+  --text-color: rgb(68, 56, 56);
+  --bg: rgb(244, 244, 244);
+}
 
 /* biodata */
 .main .border {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    top: 250px;
-    left: 70px;
-    right: 20px;
-    height: 22rem;
-    width: 75rem;
-    position: relative;
-    border: 5px solid var(--primary);
-    background-color: var(--bg);
-    box-shadow: 2px 2px 6px #888888;
-    z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-top: 3rem;
+  margin-right: 3rem;
+  top: 15rem;
+  left: 4rem;
+  right: 20px;
+  height: 22rem;
+  width: 75rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  background-color: var(--bg);
+  box-shadow: 2px 2px 6px #888888;
+  z-index: 1;
 }
 
 .main .judul {
-    position: absolute;
-    background-color: var(--primary);
-    height: 50px;
-    width: 100%;
-    left: 0px;
-    top: 0px;
+  position: absolute;
+  background-color: var(--primary);
+  height: 50px;
+  width: 100%;
+  left: 0px;
+  top: 0px;
 }
 
 .main .judul h3 {
-    margin-top: 10px;
-    margin-left: 10px;
-    color: var(--text-color);
+  margin-top: 10px;
+  margin-left: 10px;
+  color: var(--text-color);
 }
 
 .main .isi {
-    width: 80%;
-    height: 65%;
-    position: absolute;
+  width: 80%;
+  height: 65%;
+  position: absolute;
 }
 
 .main .isi table {
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
 }
 
 .main .isi table th {
-    text-align: left;
-    color: var(--text-color);
-    width: auto;
-    height: auto;
+  text-align: left;
+  color: var(--text-color);
+  width: auto;
+  height: auto;
 }
 
 .main .isi table td {
-    color: var(--text-color);
-    width: 20rem;
-    height: auto;
+  color: var(--text-color);
+  width: 20rem;
+  height: auto;
 }
 
 /* button detail */
 .tabel-tagih .btn-bayar {
-    background-color: rgb(57, 132, 198);
-    font-size: 15px;
-    padding: 10px;
-    position: relative;
-    color: #fff;
-    border-radius: 5px;
+  background-color: rgb(57, 132, 198);
+  border: 2px solid rgb(57, 132, 198);
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  width: 7rem;
+  padding: 10px;
+  border-radius: 5px;
 }
 .tabel-tagih .btn-bayar:hover {
-    background-color: rgb(52, 113, 168);
-    color: rgb(234, 233, 233);
+  background-color: rgb(114, 175, 228);
+  color: rgb(255, 255, 255);
 }
 .tabel-tagih .btn-batal {
-    background-color: rgb(224, 56, 56);
-    position: relative;
-    color: #fff;
-    font-size: 15px;
-    width: 80px;
-    height: 35px;
-    border-radius: 5px;
-    padding: 10px;
+  background-color: rgb(255, 226, 226);
+  border: 2px solid rgb(226, 103, 103);
+  position: relative;
+  color: rgb(254, 93, 93);
+  font-size: 15px;
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 10px;
 }
+/* .tabel-tagih .btn-batal:hover {
+  background-color: rgb(226, 103, 103);
+  color: rgb(234, 233, 233);
+  position: relative;
+  font-size: 15px;
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 10px;
+} */
 .tabel-tagih tr td {
-    text-align: left;
+  text-align: left;
 }
 /* end biodata */
 
 /* start tagihan siswa */
+/* .pilih-tahun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  top: 17rem;
+  left: 5rem;
+  right: 20px;
+  height: 2.5rem;
+  width: 10rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px #888888;
+  z-index: 1;
+} */
 .main .border-tagih {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    top: 250px;
-    left: 70px;
-    right: 20px;
-    height: 56rem;
-    width: 75rem;
-    position: relative;
-    border: 5px solid var(--primary);
-    box-shadow: 2px 2px 6px #888888;
-    z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 17rem;
+  top: 15rem;
+  left: 4rem;
+  right: 20px;
+  height: 65rem;
+  width: 75rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px #888888;
+  z-index: 1;
 }
-
 .main .isi-tagih {
-    width: 100%;
-    height: 700px ;
-    top: 50px;
-    position: absolute;
+  width: 100%;
+  height: 700px;
+  top: 50px;
+  position: absolute;
 }
-
 .main .isi-tagih table {
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
 }
-
 .main .isi-tagih table td {
-    width: 400px;
-    height: auto;
-    text-align: center;
-    color: var(--text-color);
-    background-color: var(--bg);
-    border-collapse: collapse;
+  width: 400px;
+  height: auto;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--bg);
+  border-collapse: collapse;
 }
 .main .isi-tagih table th {
-    padding: 10px;
-    color: var(--text-color);
-    background-color: var(--primary);
+  padding: 10px;
+  color: var(--text-color);
+  background-color: var(--primary);
 }
 .main .isi-tagih table .jatuh-tempo {
-    padding: 20px;
-    text-align: left;
+  padding: 20px;
+  text-align: left;
 }
 /* end tagihan siswa */
 
 /* main content */
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .main .content {
-    top: 80px;
-    left: 230px;
-    position: absolute;
-    z-index: -1;
+  top: 80px;
+  left: 230px;
+  position: absolute;
+  z-index: -1;
 }
-
 .main .search {
-    color: white;
-    top: 180px;
-    right: 100px;
-    position: absolute;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  background-color: #fff;
+  top: 180px;
+  right: 100px;
+  position: absolute;
 }
-
 .content h2 {
-    color: rgb(68, 56, 56);
+  color: rgb(68, 56, 56);
 }
-
-
 
 /* search button */
 .main .search input {
-    border: 3px solid rgb(102, 165, 165);
-    background-color: rgb(244, 244, 244);
-    width: 130px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 5px;
+  /* border: 3px solid rgb(102, 165, 165); */
+  color: var(--text-color);
+  padding: 10px;
+  width: 130px;
+  height: 10px;
+  border-radius: 5px;
+  margin: 7px;
 }
-
-.main .search button {
-    background-color: rgb(102, 165, 165);
-    color: #fff;
-    width: 50px;
-    height: 25px;
-    border-radius: 10px;
+.main .search-logo {
+  background-color: #fff;
+  object-fit: contain;
+  margin-right: 5px;
+  padding: 2px;
 }
-
-.main .search button:hover {
-    background-color: rgb(80, 129, 129);
+/* sort by tahun */
+.tahun-global {
+  height: 7.4rem;
+  position: relative;
+  margin: 1px;
+  background-color: var(--bg);
+  padding-bottom: 0.5rem;
+  border-radius: 10px;
 }
-/* end search button */
+.tahun-global input {
+  /* background-color: var(--primary); */
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  background-color: var(--bg);
+  /* border-radius: 0.8rem; */
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+.tahun-global input:hover {
+  color: #4e4e4e;
+  font-size: 1.1rem;
+}
+/* end sort by tahun */
 
 /* responsive */
 /* laptop */
 @media (max-width: 1366px) {
-
 }
 
 /* tablet */
 @media (max-width: 758px) {
-    .main .content {
-        top: 80px;
-        left: 200px;
-        position: absolute;
-        z-index: -1;
-    }
-    .main .border {
-        height: 330px;
-        width: 530px;
-    }
-    .main .search {
-        right: 50px;
-    }
+  .main .content {
+    top: 80px;
+    left: 200px;
+    position: absolute;
+    z-index: -1;
+  }
+  /* .main .border {
+    height: 330px;
+    width: 530px;
+  } */
+  .main .search {
+    right: 50px;
+  }
 }
 
 /* Mobile Phone */
 @media (max-width: 450px) {
-    .main .content {
-        top: 80px;
-        left: 130px;
-        position: absolute;
-        z-index: -1;
-    }
-    .main .border {
-        height: 330px;
-        width: 430px;
-    }
-    .main .search {
-        right: 10px;
-    }
+  .main .content {
+    top: 80px;
+    left: 130px;
+    position: absolute;
+    z-index: -1;
+  }
+  /* .main .border {
+    height: 330px;
+    width: 430px;
+  } */
+  .main .search {
+    right: 10px;
+  }
 }
