@@ -1,0 +1,104 @@
+:root {
+  --primary: rgb(192, 194, 231);
+  --text-color: rgb(68, 56, 56);
+  --bg: var(--bg) rgb(244, 244, 244);
+}
+
+/* main content */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .form-tabel {
+  top: 250px;
+  left: 20px;
+  right: 20px;
+  height: auto;
+  width: 37rem;
+  position: relative;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  background-color: rgb(244, 244, 244);
+  box-shadow: 1px 2px 5px #888888;
+  text-align: center;
+}
+
+/* Isi dari form tambah tabel */
+.form-tabel h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.form-tabel input {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 8px;
+  width: 300px;
+}
+.form-tabel label {
+  text-align: left;
+}
+.form-tabel button {
+  margin-top: 80px;
+  bottom: 50px;
+  position: relative;
+}
+.btn-bayar {
+  background-color: rgb(57, 132, 198);
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  width: auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+.btn-bayar:hover {
+  background-color: rgb(52, 113, 168);
+  color: rgb(234, 233, 233);
+}
+/* Tutup dari form tambah tabel */
+/* tutup main content */
+
+/* Tutup form tambah tabel */
+
+/* responsive */
+/* laptop */
+@media (max-width: 1366px) {
+}
+
+/* tablet */
+@media (max-width: 758px) {
+  .main .content {
+    top: 80px;
+    left: 200px;
+    position: absolute;
+    z-index: -1;
+  }
+  .main .border {
+    height: 330px;
+    width: 530px;
+  }
+  .main .search {
+    right: 50px;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  .main .content {
+    top: 80px;
+    left: 130px;
+    position: absolute;
+    z-index: -1;
+  }
+  .main .border {
+    height: 330px;
+    width: 430px;
+  }
+  .main .search {
+    right: 10px;
+  }
+}
