@@ -32,10 +32,10 @@ if (!isset($_SESSION['username'])) {
         if (!$_POST['nis']) {
             $nis = $_GET['nis'];
         }
-        $query = "SELECT * FROM tb_siswa WHERE nis='$nis'";
+        $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas)  WHERE nis='$nis'";
         $keyword = $_POST['keyword'];
         if (isset($_POST["keyword"])) {
-            $query = "SELECT * FROM tb_siswa WHERE nis like '%$keyword%'";
+            $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas)  WHERE nis like '%$keyword%'";
         }
         ?>
 
@@ -176,26 +176,32 @@ if (!isset($_SESSION['username'])) {
                                             <?php
                                             }
                                             // tutup menentukan tahun
+                                            if ($i < 7) {
                                             ?>
-                                            <td><?= $row_bulan['tanggal_bayar'] ?></td>
-                                            <td>
-                                                <?php
-                                                if (isset($row_bulan)) {
-                                                ?>
-                                                    Rp. <?= number_format($row_bulan['jumlah_bayar'], 0, ',', '.'); ?>
-                                                <?php
+                                                <td colspan="4">Tidak ada data</td>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <td><?= $row_bulan['tanggal_bayar'] ?></td>
+                                                <td>
+                                                    <?php
+                                                    if (isset($row_bulan)) {
+                                                    ?>
+                                                        Rp. <?= number_format($row_bulan['jumlah_bayar'], 0, ',', '.'); ?>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td><?= $row_bulan['status'] ?></td>
+                                                <td>
+                                                    <?php
                                                 }
-                                                ?>
-                                            </td>
-                                            <td><?= $row_bulan['status'] ?></td>
-                                            <td>
-                                                <?php
                                                 $cek_bulan = mysqli_num_rows($hasil_bulan);
                                                 if (@$_SESSION['level_user'] == 'admin' || @$_SESSION['level_user'] == 'petugas') {
                                                     if (!$cek_bulan > 0) {
                                                         if (!$nis_global == 0) {
                                                             if ($i > 7) {
-                                                ?>
+                                                    ?>
                                                                 <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')">BAYAR</a>
                                                                 <input type="text" hidden name="bulan" value="<?= $bulan ?>">
                                                                 <input type="text" hidden name="nis" value="<?= $row['nis']; ?>">
@@ -344,26 +350,32 @@ if (!isset($_SESSION['username'])) {
                                             <?php
                                                 }
                                                 // tutup menentukan tahun
+                                                if ($i > 6) {
                                             ?>
-                                            <td><?= $row_bulan['tanggal_bayar'] ?></td>
-                                            <td>
-                                                <?php
-                                                if (isset($row_bulan)) {
-                                                ?>
-                                                    Rp. <?= $row_bulan['jumlah_bayar']; ?>
-                                                <?php
+                                                <td colspan="4">Tidak ada data</td>
+                                            <?php
+                                                } else {
+                                            ?>
+                                                <td><?= $row_bulan['tanggal_bayar'] ?></td>
+                                                <td>
+                                                    <?php
+                                                    if (isset($row_bulan)) {
+                                                    ?>
+                                                        Rp. <?= $row_bulan['jumlah_bayar']; ?>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td><?= $row_bulan['status'] ?></td>
+                                                <td>
+                                                    <?php
                                                 }
-                                                ?>
-                                            </td>
-                                            <td><?= $row_bulan['status'] ?></td>
-                                            <td>
-                                                <?php
                                                 $cek_bulan = mysqli_num_rows($hasil_bulan);
                                                 if (@$_SESSION['level_user'] == 'admin' || @$_SESSION['level_user'] == 'petugas') {
                                                     if (!$cek_bulan > 0) {
                                                         if (!$nis_global == 0) {
                                                             if ($i < 7) {
-                                                ?>
+                                                    ?>
                                                                 <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')">BAYAR</a>
                                                                 <input type="text" hidden name="bulan" value="<?= $bulan ?>">
                                                                 <input type="text" hidden name="nis" value="<?= $row['nis']; ?>">
@@ -381,7 +393,7 @@ if (!isset($_SESSION['username'])) {
                                         }
 
                                         ?>
-                                            </td>
+                                                </td>
                                         </tr>
 
                             </form>

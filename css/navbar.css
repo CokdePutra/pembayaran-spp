@@ -70,7 +70,7 @@ body {
   display: flex;
   flex-direction: column;
   position: fixed;
-  transition: 0.8s;
+  transition: 1s;
   z-index: 10;
   /* z-index: 9999; */
 }

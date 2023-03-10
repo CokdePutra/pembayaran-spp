@@ -56,14 +56,14 @@ if (!isset($_SESSION['username'])) {
                             <th><label for="nama_kelas">Nama Kelas</label></th>
                             <td>
                                 <?php
-                                $hasil_kelas = mysqli_query($koneksi, "SELECT nama_kelas FROM tb_kelas");
+                                $hasil_kelas = mysqli_query($koneksi, "SELECT id_kelas,nama_kelas FROM tb_kelas");
                                 ?>
                                 <select name="nama_kelas" id="select">
                                     <option value="">Pilih Kelas</option>
                                     <?php
                                     while ($row_kelas = mysqli_fetch_assoc($hasil_kelas)) {
                                     ?>
-                                        <option value="<?= $row_kelas['nama_kelas'] ?>"><?= $row_kelas['nama_kelas'] ?></option>
+                                        <option value="<?= $row_kelas['id_kelas'] ?>"><?= $row_kelas['nama_kelas'] ?></option>
                                     <?php
                                     }
                                     ?>

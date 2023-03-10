@@ -58,10 +58,26 @@ if (!isset($_SESSION['username'])) {
                         <button class="search-logo" type="submit" name="cari"><img src="../image/search-logo.png" style="width:15px; height:15px; margin-right:5px;"></button>
                         <datalist id="list_nis">
                             <?php
-                            $hasil = mysqli_query($koneksi, "SELECT bulan FROM pembayaran_spp");
-                            while ($row = mysqli_fetch_assoc($hasil)) {
+                            $awaltempo = date("Y-00-d");
+                            $bulanIndo = [
+                                '01' => 'Januari',
+                                '02' => 'Februari',
+                                '03' => 'Maret',
+                                '04' => 'April',
+                                '05' => 'Mei',
+                                '06' => 'Juni',
+                                '07' => 'Juli',
+                                '08' => 'Agustus',
+                                '09' => 'September',
+                                '10' => 'Oktober',
+                                '11' => 'November',
+                                '12' => 'Desember',
+                            ];
+                            for ($i = 1; $i < 13; $i++) {
+                                $jatuhtempo = date("Y-m-d", strtotime("+$i month", strtotime($awaltempo)));
+                                $bulan = $bulanIndo[date('m', strtotime($jatuhtempo))];
                             ?>
-                                <option value="<?= $row['bulan']; ?>"><?= $row['bulan'] ?></option>
+                                <option value="<?= $bulan ?>"><?= $bulan ?></option>
                             <?php
                             }
                             ?>
@@ -90,18 +106,27 @@ if (!isset($_SESSION['username'])) {
                         <tbody>
                             <?php
                             $hasil = mysqli_query($koneksi, $query);
-                            while ($row = mysqli_fetch_assoc($hasil)) {
+                            $cek_data = mysqli_num_rows($hasil);
+                            if ($cek_data < 1) {
                             ?>
                                 <tr>
-                                    <td><?= $row['id_bayar']; ?></td>
-                                    <td style="width:10rem;"><?= $row['nama_petugas']; ?></td>
-                                    <td style="width:10rem;"><?= $row['nama_siswa']; ?></td>
-                                    <td><?= $row['tanggal_bayar']; ?></td>
-                                    <td style="text-align:left;"><?= $row['bulan']; ?></td>
-                                    <td><?= $row['tahun_bayar']; ?></td>
-                                    <td><?= $row['jumlah_bayar']; ?></td>
+                                    <td colspan="7">Data Tidak Ditemukan</td>
                                 </tr>
+                                <?php
+                            } else {
+                                while ($row = mysqli_fetch_assoc($hasil)) {
+                                ?>
+                                    <tr>
+                                        <td><?= $row['id_bayar']; ?></td>
+                                        <td style="width:10rem;"><?= $row['nama_petugas']; ?></td>
+                                        <td style="width:10rem;"><?= $row['nama_siswa']; ?></td>
+                                        <td><?= $row['tanggal_bayar']; ?></td>
+                                        <td style="text-align:left;"><?= $row['bulan']; ?></td>
+                                        <td><?= $row['tahun_bayar']; ?></td>
+                                        <td><?= $row['jumlah_bayar']; ?></td>
+                                    </tr>
                             <?php
+                                }
                             }
                             ?>
                         </tbody>

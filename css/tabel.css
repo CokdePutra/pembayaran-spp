@@ -5,17 +5,31 @@
 }
 
 /* cetak btn */
-.cetak input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.box .cetak input[name="cetak"] {
+  position: absolute;
+  font-weight: bold;
+  padding: 0.74rem 1.93rem;
+  border-radius: 0.4rem;
+}
+.box .cetak input[name="cetak"]:hover {
+ background-color: rgb(234, 233, 233);
+ color: rgb(58, 58, 58);
+ font-weight: bold;
+ cursor: pointer;
+}
+.box .cetak img {
+  position: absolute;
+  margin: 0.5rem;
+  z-index: 1;
+}
+.box .cetak {
   margin-top: 3rem;
   /* margin-right: 3rem; */
-  /* margin-bottom: 17rem; */
-  top: 15rem;
+  margin-bottom: -5rem;
+  top: 12rem;
   left: 5rem;
   height: 3rem;
-  width: 6rem;
+  width: 7rem;
   position: relative;
   border: 4px solid var(--primary);
   border-radius: 10px;
@@ -31,8 +45,8 @@
   align-items: center;
   margin-top: 1.5rem;
   margin-right: 3rem;
-  margin-bottom: 17rem;
-  top: 15rem;
+  margin-bottom: 19rem;
+  top: 17rem;
   left: 5rem;
   height: auto;
   width: 75rem;
@@ -106,6 +120,13 @@
 }
 
 /* search button */
+.main .search .list-bulan select{
+  margin: 0.6rem;
+  padding: 0.3rem;
+  width: 9rem;
+  border-radius: 0.4rem;
+  background-color: #fff;
+}
 .main .search input {
   /* border: 3px solid rgb(102, 165, 165); */
   color: var(--text-color);
@@ -134,10 +155,6 @@
   height: auto;
   border-radius: 5px;
   position: relative;
-}
-
-.btn-tambah .tambah:hover {
-  background-color: rgb(80, 129, 129);
 }
 /* akhir button tambah data */
 

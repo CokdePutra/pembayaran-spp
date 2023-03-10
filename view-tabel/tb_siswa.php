@@ -35,10 +35,10 @@ if (!isset($_SESSION['username'])) {
         <form action="" method="POST">
             <?php
             include("../koneksi.php");
-            $query = "SELECT * FROM tb_siswa ORDER BY nis ASC";
+            $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) ORDER BY nis ASC";
             $keyword = $_POST['keyword'];
             if (isset($_POST["cari"])) {
-                $query = "SELECT * FROM tb_siswa WHERE nis like '%$keyword%' or
+                $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE nis like '%$keyword%' or
                                                        nisn like '%$keyword%' or
                                                        nama_siswa like '%$keyword%' or
                                                        nama_kelas like '%$keyword%' or

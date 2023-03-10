@@ -32,10 +32,10 @@ if (!isset($_SESSION['username'])) {
             <?php
             include("../koneksi.php");
             $nis = $_SESSION['username'];
-            $query = "SELECT * FROM tb_siswa WHERE nis='$nis' LIMIT 1";
+            $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas)  WHERE nis='$nis' LIMIT 1";
             $keyword = $_POST['keyword'];
             if (isset($_POST["cari"])) {
-                $query = "SELECT * FROM tb_siswa WHERE nis like '%$keyword%' or
+                $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas)  WHERE nis like '%$keyword%' or
                                                        nama_siswa like '%$keyword%' LIMIT 1";
             }
             ?>

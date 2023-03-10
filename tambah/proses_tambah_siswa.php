@@ -7,13 +7,13 @@ if (!@$_SESSION['username']) {
     $nisn = $_POST['nisn'];
     $password = $_POST['password'];
     $nama_siswa = $_POST['nama_siswa'];
-    $nama_kelas = $_POST['nama_kelas'];
+    $id_kelas = $_POST['nama_kelas'];
     $angkatan = $_POST['angkatan'];
     $alamat = $_POST['alamat'];
     $no_telp = $_POST['telp_ortu'];
 
     include('../koneksi.php');
-    $hasil = mysqli_query($koneksi, "INSERT INTO tb_siswa (`nisn`, `password`, `nama_siswa`, `nama_kelas`, `angkatan`, `alamat`, `telp_ortu`) VALUES ('$nisn', '$password', '$nama_siswa', '$nama_kelas', '$angkatan', '$alamat', '$no_telp')");
+    $hasil = mysqli_query($koneksi, "INSERT INTO tb_siswa (`nisn`, `password`, `nama_siswa`, `id_kelas`, `angkatan`, `alamat`, `telp_ortu`) VALUES ('$nisn', '$password', '$nama_siswa', '$id_kelas', '$angkatan', '$alamat', '$no_telp')");
 
     if (!$hasil) {
         // die("Gagal memasukan data SPP " . mysqli_query($koneksi, "INSERT INTO tb_siswa VALUES ('$angkatan','$nominal')"));
