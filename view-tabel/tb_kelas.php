@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
         <form action="" method="POST">
             <?php
             include("../koneksi.php");
-            $query = "SELECT * FROM tb_kelas ORDER BY nama_kelas ASC";
+            $query = "SELECT * FROM tb_kelas ORDER BY id_kelas ASC";
             $keyword = $_POST['keyword'];
             if (isset($_POST["cari"])) {
                 $query = "SELECT * FROM tb_kelas WHERE nama_kelas like '%$keyword%'";
@@ -76,7 +76,7 @@ if (!isset($_SESSION['username'])) {
                         <thead>
                             <tr>
                                 <th>Angkatan</th>
-                                <th>Nominal</th>
+                                <th>Keterangan</th>
                                 <th>
                                     <div class="btn-tambah">
                                         <a class="tambah" href="../tambah/tambah_data_kelas.php?page=kelas">Tambah Data</a>
@@ -94,10 +94,9 @@ if (!isset($_SESSION['username'])) {
                                     <td><?= $row['keterangan']; ?></td>
                                     <td>
                                         <div class="button-aksi">
-                                            <!-- <a href="../update/update_data_spp.php?id=<?= $row['nama_kelas']; ?>"><img src="../image/edit-logo.png" style="width:25px; height:25px; margin-right:5px;"></a> -->
                                             <?php
                                             $id_cek = $row['nama_kelas'];
-                                            $hasildelete = mysqli_query($koneksi, "SELECT nama_kelas FROM tb_kelas INNER JOIN tb_siswa USING(nama_kelas)
+                                            $hasildelete = mysqli_query($koneksi, "SELECT nama_kelas FROM tb_kelas INNER JOIN tb_siswa USING(id_kelas)
                                             WHERE nama_kelas='$id_cek'");
                                             $cek = mysqli_num_rows($hasildelete);
                                             if ($cek == 0) {

@@ -49,7 +49,7 @@ if (!isset($_SESSION['username'])) {
                     tahun_bayar like '%$keyword%' ORDER BY id_bayar DESC";
                 // $hasil = mysqli_query($koneksi, $query);
             } else {
-                $query = "SELECT * FROM pembayaran_spp INNER JOIN tb_petugas USING(id_petugas) INNER JOIN tb_siswa USING(nis) INNER JOIN tb_kelas ON tb_siswa.id_kelas=tb_kelas.id_kelas WHERE bulan='$list_bulan' AND nama_kelas IS NOT NULL AND nama_kelas like '%$keyword%'";
+                $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE nama_kelas like '%$keyword%'";
                 // $hasil = mysqli_query($koneksi, $query);
             }
         }
@@ -115,12 +115,28 @@ if (!isset($_SESSION['username'])) {
                         <thead>
                             <tr>
                                 <th>NO</th>
-                                <th>Nama Petugas</th>
+                                <?php
+                                // var_dump($query);
+                                $take_bulan = $_POST['bulan'] == 'all';
+                                if ($take_bulan) {
+                                ?>
+                                    <th>Nama Petugas</th>
+                                <?php
+                                }
+                                ?>
                                 <th>Nama Siswa</th>
                                 <th>Nama Kelas</th>
                                 <th>Tanggal Bayar</th>
                                 <th>Bulan Dibayar</th>
-                                <th>Tahun Dibayar</th>
+                                <th>
+                                    <?php
+                                    if ($take_bulan) {
+                                        echo "Tahun Dibayar";
+                                    } else {
+                                        echo "Status";
+                                    }
+                                    ?>
+                                </th>
                                 <th>Jumlah Bayar</th>
                             </tr>
                         </thead>
@@ -144,30 +160,100 @@ if (!isset($_SESSION['username'])) {
                                     <?php
                                 } else {
                                     while ($row = mysqli_fetch_assoc($hasil)) {
+                                        $nama_siswa = $row['nama_siswa'];
+                                        $hasil_bulan = mysqli_query($koneksi, "SELECT tanggal_bayar, jumlah_bayar FROM pembayaran_spp INNER JOIN tb_siswa USING(nis) WHERE nama_siswa='$nama_siswa' AND bulan='$list_bulan'");
+                                        $row_bulan = mysqli_fetch_assoc($hasil_bulan);
                                     ?>
                                         <tr>
                                             <td><?= $i++ ?></td>
-                                            <td style="width:10rem;"><?= $row['nama_petugas']; ?></td>
+                                            <?php
+                                            if ($take_bulan) {
+                                            ?>
+                                                <td style="width:10rem;"><?= $row['nama_petugas']; ?></td>
+                                            <?php
+                                            }
+                                            ?>
                                             <td style="width:10rem;"><?= $row['nama_siswa']; ?></td>
                                             <td style="width:10rem;"><?= $row['nama_kelas']; ?></td>
-                                            <td><?= $row['tanggal_bayar']; ?></td>
-                                            <td style="text-align:left;"><?= $row['bulan']; ?></td>
-                                            <td><?= $row['tahun_bayar']; ?></td>
-                                            <td>Rp. <?= number_format($row['jumlah_bayar'], 0, ',', '.') ?></td>
+
+                                            <td>
+                                                <?php
+                                                if ($take_bulan) {
+                                                    echo $row['tanggal_bayar'];
+                                                } else {
+                                                    echo $row_bulan['tanggal_bayar'];
+                                                }
+                                                ?>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <?php
+                                                if ($take_bulan) {
+                                                    echo $row['bulan'];
+                                                } else {
+                                                    echo $list_bulan;
+                                                }
+                                                ?>
+                                            </td>
+                                            <?php
+                                            if ($take_bulan) {
+                                            } else {
+                                            ?>
+                                                <td>
+                                                    <?php
+                                                    if (@$row_bulan) {
+                                                        echo "Lunas";
+                                                    } else {
+                                                        echo "Belum Lunas";
+                                                    }
+                                                    ?>
+                                                </td>
+                                            <?php
+                                            }
+                                            ?>
+                                            <?php
+                                            if ($take_bulan) {
+                                            ?>
+                                                <td><?= $row['tahun_bayar'] ?></td>
+                                            <?php
+                                            }
+                                            ?>
+                                            <td>Rp.
+                                                <?php
+                                                if ($take_bulan) {
+                                                    echo number_format($row['jumlah_bayar'], 0, ',', '.');
+                                                } else {
+                                                    echo number_format($row_bulan['jumlah_bayar'], 0, ',', '.');
+                                                }
+                                                ?>
+                                            </td>
                                         </tr>
                                 <?php
-                                        $total += $row['jumlah_bayar'];
+                                        if ($take_bulan) {
+                                            $total += $row['jumlah_bayar'];
+                                        } else {
+                                            $total += $row_bulan['jumlah_bayar'];
+                                        }
                                     }
                                 }
                                 ?>
                                 <tr>
-                                    <td colspan="6" style="text-align:right">Total</td>
-                                    <td colspan="2">Rp.<?= number_format($total, 0, ',', '.') ?></td>
-                                </tr>
-                            <?php
+                                    <?php
+                                    if ($take_bulan) {
+                                    ?>
+                                        <td colspan="6" style="text-align:right">Total</td>
+                                        <td colspan="2">Rp.<?= number_format($total, 0, ',', '.') ?></td>
 
-                            }
-                            ?>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <td colspan="5" style="text-align:right">Total</td>
+                                        <td colspan="2">Rp.<?= number_format($total, 0, ',', '.') ?></td>
+
+                                </tr>
+                        <?php
+                                    }
+                                }
+                        ?>
                         </tbody>
                     </table>
                 </div>
