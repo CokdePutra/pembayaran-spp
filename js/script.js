@@ -24,6 +24,11 @@ function decrementValue() {
   document.getElementById("plusButton").disabled = false;
 }
 
+// function Print
+function printPage() {
+  window.print();
+}
+
 // // toggle class active
 // const content = document.querySelector(".content");
 

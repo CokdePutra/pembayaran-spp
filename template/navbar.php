@@ -4,7 +4,7 @@ if (@$_SESSION['level_user'] == 'admin' || @$_SESSION['level_user'] == 'petugas'
 
     $active = $_GET['page'];
 ?>
-    <nav class="navbar">
+    <nav class="navbar print">
         <div class="sidebar">
             <div class="logo">
                 <img src="../image/logo.png">
@@ -45,7 +45,7 @@ if (@$_SESSION['level_user'] == 'admin' || @$_SESSION['level_user'] == 'petugas'
 ?>
 
 <!-- navbar -->
-<div class="nav-profile">
+<div class="nav-profile print">
 
     <div class="hamburger-menu">
         <?php

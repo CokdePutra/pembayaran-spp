@@ -57,6 +57,25 @@
   /* z-index: -1; */
 }
 
+/* css for print */
+@media print {
+  .print {
+    display: none !important;
+}
+  .box .border{
+    border: 1px solid black;
+    top: 10rem;
+    left: 1.5rem;
+    /* margin-left: -12rem; */
+    width: 51rem;
+  }
+  .box .border thead, tbody{
+    font-size: 10px;
+    width: 50rem;
+  }
+}
+/* end css print */
+
 .box .isi-tabel {
   width: 100%;
   height: 100%;
@@ -87,7 +106,6 @@
   background-color: var(--bg);
   border-collapse: collapse;
 }
-
 /* end pembayaran */
 
 /* main content */
@@ -233,8 +251,27 @@ input[type="submit"]:hover {
   background-color: rgb(52, 113, 168);
   color: rgb(234, 233, 233);
 }
-
 /* Tutup form tambah tabel */
+
+/* div for ttd */
+.ttd {
+  display: none;
+  float: right;
+}
+.ttd h4 {
+  margin-top: 0.5rem;
+}
+.ttd p {
+  margin-top: 6.5rem;
+  border-bottom: 1px solid;
+}
+@media print{
+  .ttd{
+    display: block;
+    margin-right: 2rem;
+  }
+}
+/* end div ttd */
 
 /* responsive */
 /* laptop */

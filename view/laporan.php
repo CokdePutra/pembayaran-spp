@@ -64,7 +64,7 @@ if (!isset($_SESSION['username'])) {
                 <?php
                 if (@$_SESSION['level_user'] == 'admin' || @$_SESSION['level_user'] == 'petugas') {
                 ?>
-                    <div class="search">
+                    <div class="search print">
                         <div class="list-bulan">
                             <select name="bulan">
                                 <option value="all">Semua Bulan</option>
@@ -101,12 +101,13 @@ if (!isset($_SESSION['username'])) {
                 ?>
         </form>
         <div class="box">
-            <div class="cetak">
-                <form action="print.php" method="POST">
-                    <input type="text" name="kode" hidden value="<?= $keyword ?>">
+            <div class="cetak print">
+                <form action="" method="POST">
+                    <!-- <input type="text" name="kode" hidden value="<?= $keyword ?>">
                     <input type="text" name="bulan" hidden value="<?= $list_bulan ?>">
+                    <input type="text" name="id" hidden value="<?= $row ?>"> -->
                     <img src="../image/print-logo.png" style="width:20px; height:20px; margin-right:5px;">
-                    <input name="cetak" type="submit" value="CETAK">
+                    <input onclick="printPage()" name="cetak" type="submit" value="CETAK">
                 </form>
             </div>
             <div class="border">
@@ -161,7 +162,8 @@ if (!isset($_SESSION['username'])) {
                                 } else {
                                     while ($row = mysqli_fetch_assoc($hasil)) {
                                         $nama_siswa = $row['nama_siswa'];
-                                        $hasil_bulan = mysqli_query($koneksi, "SELECT tanggal_bayar, jumlah_bayar FROM pembayaran_spp INNER JOIN tb_siswa USING(nis) WHERE nama_siswa='$nama_siswa' AND bulan='$list_bulan'");
+                                        $cek_tahun = date('Y');
+                                        $hasil_bulan = mysqli_query($koneksi, "SELECT tanggal_bayar, jumlah_bayar,id_bayar FROM pembayaran_spp INNER JOIN tb_siswa USING(nis) WHERE nama_siswa='$nama_siswa' AND bulan='$list_bulan' AND tahun_bayar='$cek_tahun'");
                                         $row_bulan = mysqli_fetch_assoc($hasil_bulan);
                                     ?>
                                         <tr>
@@ -257,6 +259,10 @@ if (!isset($_SESSION['username'])) {
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="ttd">
+                <h5>Yth Kepala Sekolah,</h5>
+                <p></p>
             </div>
         </div>
     </div>
