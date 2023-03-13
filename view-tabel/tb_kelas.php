@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
         <form action="" method="POST">
             <?php
             include("../koneksi.php");
-            $query = "SELECT * FROM tb_kelas ORDER BY id_kelas ASC";
+            $query = "SELECT * FROM tb_kelas ORDER BY id_kelas DESC";
             $keyword = $_POST['keyword'];
             if (isset($_POST["cari"])) {
                 $query = "SELECT * FROM tb_kelas WHERE nama_kelas like '%$keyword%'";
@@ -95,13 +95,13 @@ if (!isset($_SESSION['username'])) {
                                     <td>
                                         <div class="button-aksi">
                                             <?php
-                                            $id_cek = $row['nama_kelas'];
-                                            $hasildelete = mysqli_query($koneksi, "SELECT nama_kelas FROM tb_kelas INNER JOIN tb_siswa USING(id_kelas)
-                                            WHERE nama_kelas='$id_cek'");
+                                            $id_cek = $row['id_kelas'];
+                                            $hasildelete = mysqli_query($koneksi, "SELECT id_kelas FROM tb_kelas INNER JOIN tb_siswa USING(id_kelas)
+                                            WHERE id_kelas='$id_cek'");
                                             $cek = mysqli_num_rows($hasildelete);
                                             if ($cek == 0) {
                                             ?>
-                                                <a href="../delete/proses_delete_kelas.php?id=<?= $row['nama_kelas']; ?>" onclick="return confirm('Anda yakin mau menghapus data ini ?')"><img src="../image/delete-logo.png" style="width:25px; height:25px; margin-right:5px;"></a>
+                                                <a href="../delete/proses_delete_kelas.php?id=<?= $row['id_kelas']; ?>" onclick="return confirm('Anda yakin mau menghapus data ini ?')"><img src="../image/delete-logo.png" style="width:25px; height:25px; margin-right:5px;"></a>
                                             <?php
                                             } else {
                                             ?>

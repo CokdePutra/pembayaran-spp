@@ -39,7 +39,7 @@ if (!isset($_SESSION['username'])) {
         $keyword = $_POST['keyword'];
         if (isset($_POST["cari"])) {
 
-            if ($_POST['bulan'] == 'all') {
+            if ($list_bulan == 'all') {
                 $query = "SELECT * FROM pembayaran_spp INNER JOIN tb_petugas USING(id_petugas) INNER JOIN tb_siswa USING(nis) INNER JOIN tb_kelas ON tb_siswa.id_kelas=tb_kelas.id_kelas WHERE     
                     nama_kelas like '%$keyword%' or
                     nama_petugas like '%$keyword%' or

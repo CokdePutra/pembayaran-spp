@@ -200,7 +200,7 @@ if (!isset($_SESSION['username'])) {
                                                 if (@$_SESSION['level_user'] == 'admin' || @$_SESSION['level_user'] == 'petugas') {
                                                     if (!$cek_bulan > 0) {
                                                         if (!$nis_global == 0) {
-                                                            if ($i > 7) {
+                                                            if ($i > 6) {
                                                     ?>
                                                                 <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')">BAYAR</a>
                                                                 <input type="text" hidden name="bulan" value="<?= $bulan ?>">
@@ -211,7 +211,6 @@ if (!isset($_SESSION['username'])) {
                                                     } else {
                                                         ?>
                                                         <!-- <input class="btn-bayar-batal" type="submit" value="BATALKAN"> -->
-                                                        <!-- <a class="btn-batal" href="../delete/proses_delete_pembayaran.php?id_bayar=<?= $row_bulan['id_bayar'] ?>" onclick="return confirm('Anda yakin mau membatalkan transaksi ini?')">BATALKAN</a> -->
                                                         <a class="btn-batal" disabled>TERBAYAR</a>
 
                                                 <?php

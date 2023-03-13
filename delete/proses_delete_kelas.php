@@ -6,10 +6,10 @@ if (!@$_SESSION['username']) {
 
 include('../koneksi.php');
 $id = $_GET['id'];
-$hasil = mysqli_query($koneksi, "DELETE FROM tb_kelas WHERE nama_kelas ='$id'");
+$hasil = mysqli_query($koneksi, "DELETE FROM tb_kelas WHERE id_kelas ='$id'");
 
 if (!$hasil) {
-    die("Gagal menghapus data Kelas " . mysqli_error($koneksi, "DELETE FROM tb_kelas WHERE nama_kelas ='$id'"));
+    die("Gagal menghapus data Kelas " . mysqli_error($koneksi, "DELETE FROM tb_kelas WHERE id_kelas ='$id'"));
 } else {
     echo "<script>
         alert('Data Kelas berhasil di Hapuskan')

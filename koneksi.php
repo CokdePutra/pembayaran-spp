@@ -1,3 +1,3 @@
 <?php
 
-$koneksi = mysqli_connect("localhost","root","","pembayaran_spp");
+$koneksi = mysqli_connect("localhost", "root", "", "db_pembayaran_spp");
