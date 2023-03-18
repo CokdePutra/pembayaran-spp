@@ -75,7 +75,7 @@ if (!isset($_SESSION['username'])) {
                     <table>
                         <thead>
                             <tr>
-                                <th>Angkatan</th>
+                                <th>Nama Kelas</th>
                                 <th>Keterangan</th>
                                 <th>
                                     <div class="btn-tambah">

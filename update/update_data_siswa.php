@@ -28,7 +28,7 @@ if (!isset($_SESSION['username'])) {
         include('../template/navbar.php');
         include('../koneksi.php');
         $nis = $_GET['nis'];
-        $hasil = mysqli_query($koneksi, "SELECT * FROM tb_siswa WHERE nis='$nis'");
+        $hasil = mysqli_query($koneksi, "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE nis='$nis'");
         $row_siswa = mysqli_fetch_assoc($hasil);
         ?>
 
@@ -51,7 +51,7 @@ if (!isset($_SESSION['username'])) {
                         </tr>
                         <tr>
                             <th><label for="password">Password</label></th>
-                            <td><input type="text" required name="password" autocomplete="off" placeholder="******" value="<?= $row_siswa['password'] ?>"></td>
+                            <td><input type="password" required name="password" autocomplete="off" placeholder="******" value="<?= $row_siswa['password'] ?>"></td>
                         </tr>
                         <tr>
                             <th><label for="nama_siswa">Nama Siswa</label></th>
@@ -61,14 +61,14 @@ if (!isset($_SESSION['username'])) {
                             <th><label for="nama_kelas">Nama Kelas</label></th>
                             <td>
                                 <?php
-                                $hasil_kelas = mysqli_query($koneksi, "SELECT nama_kelas FROM tb_kelas");
+                                $hasil_kelas = mysqli_query($koneksi, "SELECT id_kelas, nama_kelas FROM tb_kelas");
                                 ?>
-                                <select name="nama_kelas" id="select">
-                                    <option value="<?= $row_siswa['nama_kelas'] ?>"><?= $row_siswa['nama_kelas'] ?></option>
+                                <select name="id_kelas" id="select">
+                                    <option value="<?= $row_siswa['id_kelas'] ?>"><?= $row_siswa['nama_kelas'] ?></option>
                                     <?php
                                     while ($row = mysqli_fetch_assoc($hasil_kelas)) {
                                     ?>
-                                        <option value="<?= $row['nama_kelas'] ?>"><?= $row['nama_kelas'] ?></option>
+                                        <option value="<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></option>
                                     <?php
                                     }
                                     ?>

@@ -28,9 +28,14 @@ if (!isset($_SESSION['username'])) {
         include('../template/navbar.php');
         include("../koneksi.php");
         // $nis = $_SESSION['username'];
-        $nis = $_POST['nis'];
-        if (!$_POST['nis']) {
-            $nis = $_GET['nis'];
+        if (@$_SESSION['level_user'] == 'siswa') {
+            $nis = $_SESSION['username'];
+        } else {
+            if (!$_POST['nis']) {
+                $nis = $_GET['nis'];
+            } else {
+                $nis = $_POST['nis'];
+            }
         }
         $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas)  WHERE nis='$nis'";
         $keyword = $_POST['keyword'];
@@ -129,7 +134,14 @@ if (!isset($_SESSION['username'])) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $nis_global = $row['nis']; ?>
+                            <?php
+                            if (@$keyword) {
+                                $nis_global = $_POST['keyword'];
+                            } else {
+                                $nis_global = $row['nis'];
+                            }
+                            // var_dump($nis_global);
+                            ?>
                             <form action="../tambah/tambah_pembayaran_spp.php" method="GET">
 
                                 <?php
@@ -192,7 +204,16 @@ if (!isset($_SESSION['username'])) {
                                                     }
                                                     ?>
                                                 </td>
-                                                <td><?= $row_bulan['status'] ?></td>
+                                                <td>
+                                                    <?php
+                                                    // var_dump($row_bulan);
+                                                    if (@$row_bulan) {
+                                                        echo $row_bulan['status'];
+                                                    } else {
+                                                        echo "Belum Lunas";
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td>
                                                     <?php
                                                 }
@@ -245,12 +266,21 @@ if (!isset($_SESSION['username'])) {
                                                 <?php
                                                 if (isset($row_bulan)) {
                                                 ?>
-                                                    Rp. <?= $row_bulan['jumlah_bayar']; ?>
+                                                    Rp. <?= number_format($row_bulan['jumlah_bayar'], 0, ',', '.'); ?>
                                                 <?php
                                                 }
                                                 ?>
                                             </td>
-                                            <td><?= $row_bulan['status'] ?></td>
+                                            <td>
+                                                <?php
+                                                // var_dump($row_bulan);
+                                                if (@$row_bulan) {
+                                                    echo $row_bulan['status'];
+                                                } else {
+                                                    echo "Belum Lunas";
+                                                }
+                                                ?>
+                                            </td>
                                             <td>
                                                 <?php
                                                 $cek_bulan = mysqli_num_rows($hasil_bulan);
@@ -300,12 +330,21 @@ if (!isset($_SESSION['username'])) {
                                                 <?php
                                                 if (isset($row_bulan)) {
                                                 ?>
-                                                    Rp. <?= $row_bulan['jumlah_bayar']; ?>
+                                                    Rp. <?= number_format($row_bulan['jumlah_bayar'], 0, ',', '.'); ?>
                                                 <?php
                                                 }
                                                 ?>
                                             </td>
-                                            <td><?= $row_bulan['status'] ?></td>
+                                            <td>
+                                                <?php
+                                                // var_dump($row_bulan);
+                                                if (@$row_bulan) {
+                                                    echo $row_bulan['status'];
+                                                } else {
+                                                    echo "Belum Lunas";
+                                                }
+                                                ?>
+                                            </td>
                                             <td>
                                                 <?php
                                                 $cek_bulan = mysqli_num_rows($hasil_bulan);
@@ -360,12 +399,21 @@ if (!isset($_SESSION['username'])) {
                                                     <?php
                                                     if (isset($row_bulan)) {
                                                     ?>
-                                                        Rp. <?= $row_bulan['jumlah_bayar']; ?>
+                                                        Rp. <?= number_format($row_bulan['jumlah_bayar'], 0, ',', '.'); ?>
                                                     <?php
                                                     }
                                                     ?>
                                                 </td>
-                                                <td><?= $row_bulan['status'] ?></td>
+                                                <td>
+                                                    <?php
+                                                    // var_dump($row_bulan);
+                                                    if (@$row_bulan) {
+                                                        echo $row_bulan['status'];
+                                                    } else {
+                                                        echo "Belum Lunas";
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td>
                                                     <?php
                                                 }
@@ -398,8 +446,15 @@ if (!isset($_SESSION['username'])) {
                             </form>
                         </tbody>
                     </table>
-                    <form class="tahun-global" style="text-align: center;" action="?page=pembayaran&nis=<?= $nis ?>" method="POST">
+                    <form class="tahun-global" style="text-align: center;" action="?page=pembayaran" method="POST">
                         <h3 style="text-align: center; padding-top:1.8rem;">Pilih Tahun :</h3>
+                        <input hidden type="text" name="nis" value="<?php
+                                                                    if (@$keyword) {
+                                                                        echo $keyword;
+                                                                    } else {
+                                                                        echo $nis;
+                                                                    }
+                                                                    ?>">
                         <input type="submit" name="thnl" value="<?= $tahun_global ?>">
                         <input type="submit" name="thn2" value="<?= $tahun_global + 1 ?>">
                         <input type="submit" name="thn3" value="<?= $tahun_global + 2 ?>">

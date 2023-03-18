@@ -32,7 +32,7 @@ if (!isset($_SESSION['username'])) {
             <?php
             include("../koneksi.php");
             $nis = $_SESSION['username'];
-            $query = "SELECT * FROM tb_siswa WHERE nis='$nis'";
+            $query = "SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE nis='$nis'";
             ?>
             <div class="main">
                 <div class="content">

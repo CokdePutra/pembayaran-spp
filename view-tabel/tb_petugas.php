@@ -85,7 +85,7 @@ if (!isset($_SESSION['username'])) {
                                 <th>No Telp</th>
                                 <th>
                                     <div class="btn-tambah">
-                                        <a class="tambah" href="../tambah/tambah_data_petugas.php">Tambah Data</a>
+                                        <a class="tambah" href="../tambah/tambah_data_petugas.php?page=petugas">Tambah Data</a>
                                     </div>
                                 </th>
                             </tr>
