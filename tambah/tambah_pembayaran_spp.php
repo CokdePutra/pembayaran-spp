@@ -81,7 +81,7 @@ if (!isset($_SESSION['username'])) {
                                     <tr>
                                         <th></th>
                                         <td>
-                                            <input class="btn-bayar" type="submit" name="bayar" value="BAYAR">
+                                            <input class="btn-bayar" type="submit" name="bayar" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')" value="BAYAR">
                                             <a href="../view/detail_siswa.php?nis=<?= $nis ?>&page=pembayaran" class="btn-batal">BATAL</a>
                                         </td>
                                     </tr>

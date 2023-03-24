@@ -223,7 +223,7 @@ if (!isset($_SESSION['username'])) {
                                                         if (!$nis_global == 0) {
                                                             if ($i > 6) {
                                                     ?>
-                                                                <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')">BAYAR</a>
+                                                                <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran">BAYAR</a>
                                                                 <input type="text" hidden name="bulan" value="<?= $bulan ?>">
                                                                 <input type="text" hidden name="nis" value="<?= $row['nis']; ?>">
                                                         <?php
@@ -288,7 +288,7 @@ if (!isset($_SESSION['username'])) {
                                                     if (!$cek_bulan > 0) {
                                                         if (!$nis_global == 0) {
                                                 ?>
-                                                            <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')">BAYAR</a>
+                                                            <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran">BAYAR</a>
                                                             <input type="text" hidden name="bulan" value="<?= $bulan ?>">
                                                             <input type="text" hidden name="nis" value="<?= $row['nis']; ?>">
                                                         <?php
@@ -352,7 +352,7 @@ if (!isset($_SESSION['username'])) {
                                                     if (!$cek_bulan > 0) {
                                                         if (!$nis_global == 0) {
                                                 ?>
-                                                            <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')">BAYAR</a>
+                                                            <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran">BAYAR</a>
                                                             <input type="text" hidden name="bulan" value="<?= $bulan ?>">
                                                             <input type="text" hidden name="nis" value="<?= $row['nis']; ?>">
                                                         <?php
@@ -423,7 +423,7 @@ if (!isset($_SESSION['username'])) {
                                                         if (!$nis_global == 0) {
                                                             if ($i < 7) {
                                                     ?>
-                                                                <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran" onclick="return confirm('Apakah Anda yakin mau melakukan transaksi ini?')">BAYAR</a>
+                                                                <a class="btn-bayar" href="../tambah/tambah_pembayaran_spp.php?bulan=<?= $bulan ?>&nis=<?= $row['nis'] ?>&tahun=<?= $tahun_now ?>&page=pembayaran">BAYAR</a>
                                                                 <input type="text" hidden name="bulan" value="<?= $bulan ?>">
                                                                 <input type="text" hidden name="nis" value="<?= $row['nis']; ?>">
                                                         <?php
