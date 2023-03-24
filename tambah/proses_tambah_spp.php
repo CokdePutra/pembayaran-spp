@@ -3,7 +3,8 @@ session_start();
 include('../koneksi.php');
 $tahun_angkatan = $_POST['angkatan'];
 $cek_tahun = mysqli_query($koneksi, "SELECT angkatan FROM tb_spp WHERE angkatan='$tahun_angkatan'");
-if (!@$cek_tahun) {
+$num_cek = mysqli_num_rows($cek_tahun);
+if ($num_cek < 1) {
     if (!@$_SESSION['username']) {
         echo "<script>alert('Maaf Anda belum login');location.href='../login/login.php'</script>";
     }

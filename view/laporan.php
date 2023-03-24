@@ -103,9 +103,6 @@ if (!isset($_SESSION['username'])) {
         <div class="box">
             <div class="cetak print">
                 <form action="" method="POST">
-                    <!-- <input type="text" name="kode" hidden value="<?= $keyword ?>">
-                    <input type="text" name="bulan" hidden value="<?= $list_bulan ?>">
-                    <input type="text" name="id" hidden value="<?= $row ?>"> -->
                     <img src="../image/print-logo.png" style="width:20px; height:20px; margin-right:5px;">
                     <input onclick="printPage()" name="cetak" type="submit" value="CETAK">
                 </form>
@@ -242,13 +239,13 @@ if (!isset($_SESSION['username'])) {
                                     <?php
                                     if ($take_bulan) {
                                     ?>
-                                        <td colspan="6" style="text-align:right">Total</td>
+                                        <td colspan="6" style="text-align:right">Total Yang Sudah Bayar</td>
                                         <td colspan="2">Rp.<?= number_format($total, 0, ',', '.') ?></td>
 
                                     <?php
                                     } else {
                                     ?>
-                                        <td colspan="5" style="text-align:right">Total</td>
+                                        <td colspan="5" style="text-align:right">Total Yang Sudah Bayar</td>
                                         <td colspan="2">Rp.<?= number_format($total, 0, ',', '.') ?></td>
 
                                 </tr>
